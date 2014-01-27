@@ -1,0 +1,258 @@
+a:hover {
+    color:#C9292A
+}
+h1 {
+    color:#C9292A;
+}
+h2 {
+    color:#C9292A;
+}
+header {
+    background: none;
+}
+.swipe-menu #currency > ul li span.act {color:#C9292A}
+.swipe-menu #language > ul li span.act {color:#C9292A}
+header .header-button.active>div, header .header-button>div:hover {
+    color:#C9292A
+}
+header .header-button>ul li span:hover {color:#C9292A}
+#body .swipe .swipe-menu li a:hover {color:#C9292A}
+#cart .heading span.link_a {color:#FFFFFF;}
+.remove span:hover i{color:#C9292A}
+header #cart .cart .remove>span:hover {
+    color:##C9292A
+}
+header .links a.active, header .links a:hover {
+    color:#000000;
+}
+.tooltip-inner {
+    background-color: #C9292A;
+}
+.tooltip.top .tooltip-arrow {
+    border-top-color: #C9292A;
+}
+
+.tooltip.right .tooltip-arrow {
+    border-right-color: #C9292A;
+}
+
+.tooltip.left .tooltip-arrow {
+    border-left-color: #C9292A;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #C9292A;
+}
+.breadcrumb a.last {
+    color:#C9292A
+}
+.pagination .links a:hover,.pagination .links li.selected a {
+    border:1px solid #C9292A;
+}
+a.button-i i {
+    color:#C9292A
+}
+aside .box .box-content .box-product ul li .padding .cart a.button i {
+    color:#C9292A;
+}
+.zoom-top a{
+    background-color: #C9292A;
+}
+.box.category .box-heading {
+    color:#C9292A
+}
+.box-category > ul > li.selected>a, .box-category > ul > li>a:hover {
+    color:#000000;
+}
+.box-category > ul > li ul > li > a.selected {
+    color:#C9292A
+}
+#list_b i, #grid_b i {
+    color:#C9292A;
+}
+#full_gallery .prev:hover, #full_gallery .next:hover{
+    color:#C9292A
+}
+.image-additional .next:hover, .image-additional .prev:hover  {
+    color:#C9292A
+}
+.product-info .description .product-section {
+    color:#C9292A;
+}
+.product-info .description .product-section a{
+    color:#C9292A
+}
+.product-info .price .price-new{
+    color:#C9292A;
+}
+a.button-prod:hover {
+    background-color:#C9292A;
+}
+a.button-prod i{color:#C9292A}
+.product-info .review a:hover {
+    color:#C9292A
+}
+.product-info .review a+a {
+    color:#C9292A;
+}
+.tabs .tab-heading {
+    border-bottom:4px solid #C9292A;
+}
+.compare-info td.name a {
+    color:#C9292A
+}
+.compare-info td.td-price {
+    color:#C9292A
+}
+.wishlist-product tbody .name a {
+    color:#C9292A;
+}
+.table .total, .table .price {
+    color:#C9292A;
+}
+.checkout-heading {
+    border-top:4px solid #C9292A;
+}
+.checkout-content label a {
+    color:#C9292A;
+}
+.button-return-right-i:hover, .button-return-right:hover {color:#C9292A;}
+a:hover i.fa.fa-trash-o-o {
+    color:#C9292A
+}
+.cart-info td.name a {
+    color:#C9292A;
+}
+a.input-update:hover i{
+    color: #C9292A;
+}
+table#total  td+td {
+    color:#C9292A;
+}
+.success a:hover {
+    color:#C9292A
+}
+.success span:hover {color:#C9292A}
+.success i:hover {color:#C9292A;}
+.success i.fa.fa-thumbs-up{
+    color:#C9292A;
+}
+.success a {color:#C9292A;}
+.related .prev:hover, .related .next:hover {
+    color:#C9292A
+}
+.box .box-content .box-product ul li .quick-view-button:hover {
+    color:#C9292A
+}
+.box .box-content .box-product ul li .padding .cart a.button i {
+    color:#C9292A;
+}
+.product-grid  ul li .padding .cart a.button i {
+    color:#C9292A;
+}
+#search .button-search {
+    background:#C9292A;
+    border-color:#C9292A;
+}
+ul.sf-menu > li>a:hover, ul.sf-menu > li.sfHover>a, ul.sf-menu > ul > li.active>a  {
+    color:#C9292A
+}
+.sf-mega-section >li a:hover, .sf-mega-section >li.sfHover a {
+    color:#C9292A
+}
+.sf-menu-phone  li  i {color:#C9292A;}
+.camera_caption  h1 {color:#C9292A;}
+.camera_caption a:hover {
+    color:#C9292A;
+}
+.camera_caption a i {
+    color:#C9292A;
+}
+.camera_wrap .camera_pag .camera_pag_ul li:hover span,.camera_wrap .camera_pag .camera_pag_ul li:hover  {
+    background: #C9292A;
+}
+.camera_wrap .camera_pag .camera_pag_ul li.cameracurrent>span, .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent  {
+    background: #C9292A;
+}
+
+.camera_wrap .camera_pag .camera_pag_ul li > span{
+    background-color: #000000;
+}
+
+.bx-wrapper .bx-controls-direction a:hover {
+    color:#C9292A
+}
+/*******************************************************************/
+.content_bottom:after, .content_bottom:before {
+    background: none repeat scroll 0 0 #C9292A;
+
+}
+.content_bottom .banner{
+    background-color: #C9292A;
+}
+footer .row li a {
+    color: #C9292A;
+}
+
+input[type="submit"]:hover,a.button:hover {
+    background: #ffe935;
+    background: -moz-linear-gradient(top, #C9292A 0%,  #A30304 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#C9292A), color-stop(100%,#A30304));
+    background: -webkit-linear-gradient(top, #C9292A 0%,#A30304 100%);
+    background: -o-linear-gradient(top, #C9292A 0%,#A30304 100%);
+    background: -ms-linear-gradient(top, #C9292A 0%,#A30304 100%);
+    background: linear-gradient(to bottom, #C9292A 0%,#A30304 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#C9292A', endColorstr='#A30304',GradientType=0 );
+    border-right:1px solid #550000;
+    border-bottom:1px solid #550000;
+    color: #FFFFFF;    
+}
+a.button:hover span{
+    color: #FFFFFF;
+}
+a.button-prod:hover{
+    color: #FFFFFF;
+}
+.box.category .box-content {
+    border-bottom:1px solid #262626;
+    background-color:#F7F4EE;
+}
+.box-category > ul > li {
+    background-color:#F7F4EE;
+    border-top:1px solid #C5C5C5;
+}
+.box.category .box-heading{
+    background: url("img/heading.png") repeat-x scroll left top #EAE9E9;
+    border: 1px solid #C5C5C5;
+    color: #C9292A;
+}
+.box.category .box-content{
+    border: 1px solid #C5C5C5;
+}
+header .toprow {
+    background: url("img/heading.png") repeat-x scroll left top #EAE9E9;
+    border: 1px solid #C5C5C5;
+    color: #C9292A;
+}
+.box-category > ul > li > a{
+    color: #C9292A;
+}
+header .links a{
+    color: #C9292A;
+}
+.box-category > ul > li > ul{
+    background-color: #E4E4E4;
+}
+@media (min-width: 767px) {
+.cart-position #cart .heading span.link_a #cart-total2{
+    background-color: #C9292A;
+    color: #FFFFFF;
+}
+}
+
+.box-category > ul > li ul > li > a{
+    color: #C9292A;
+}
+.box-category > ul > li ul > li.selected > a, .box-category > ul > li ul > li > a:hover{
+    color:#000000;
+}

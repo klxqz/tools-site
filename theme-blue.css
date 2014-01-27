@@ -1,0 +1,203 @@
+a:hover {
+    color:#55B9ED
+}
+h1 {
+    color:#55B9ED;
+}
+h2 {
+    color:#55B9ED;
+}
+header {
+    background-color:#55B9ED;
+}
+.swipe-menu #currency > ul li span.act {color:#55B9ED}
+.swipe-menu #language > ul li span.act {color:#55B9ED}
+header .header-button.active>div, header .header-button>div:hover {
+    color:#55B9ED
+}
+header .header-button>ul li span:hover {color:#55B9ED}
+#body .swipe .swipe-menu li a:hover {color:#55B9ED}
+#cart .heading span.link_a {color:#55B9ED;}
+.remove span:hover i{color:#55B9ED}
+header #cart .cart .remove>span:hover {
+    color:##55B9ED
+}
+header .links a.active, header .links a:hover {
+    color:#55B9ED;
+}
+.tooltip-inner {
+    background-color: #55B9ED;
+}
+.tooltip.top .tooltip-arrow {
+    border-top-color: #55B9ED;
+}
+
+.tooltip.right .tooltip-arrow {
+    border-right-color: #55B9ED;
+}
+
+.tooltip.left .tooltip-arrow {
+    border-left-color: #55B9ED;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #55B9ED;
+}
+.breadcrumb a.last {
+    color:#55B9ED
+}
+.pagination .links a:hover,.pagination .links li.selected a {
+    border:1px solid #55B9ED;
+}
+a.button-i i {
+    color:#55B9ED
+}
+aside .box .box-content .box-product ul li .padding .cart a.button i {
+    color:#55B9ED;
+}
+.zoom-top a{
+    background-color: #55B9ED;
+}
+.box.category .box-heading {
+    color:#55B9ED
+}
+.box-category > ul > li.selected>a, .box-category > ul > li>a:hover {
+    color:#55B9ED
+}
+.box-category > ul > li ul > li > a.selected {
+    color:#55B9ED
+}
+#list_b i, #grid_b i {
+    color:#55B9ED;
+}
+#full_gallery .prev:hover, #full_gallery .next:hover{
+    color:#55B9ED
+}
+.image-additional .next:hover, .image-additional .prev:hover  {
+    color:#55B9ED
+}
+.product-info .description .product-section {
+    color:#55B9ED;
+}
+.product-info .description .product-section a{
+    color:#55B9ED
+}
+.product-info .price .price-new{
+    color:#55B9ED;
+}
+a.button-prod:hover {
+    background-color:#55B9ED;
+}
+a.button-prod i{color:#55B9ED}
+.product-info .review a:hover {
+    color:#55B9ED
+}
+.product-info .review a+a {
+    color:#55B9ED;
+}
+.tabs .tab-heading {
+    border-bottom:4px solid #55B9ED;
+}
+.compare-info td.name a {
+    color:#55B9ED
+}
+.compare-info td.td-price {
+    color:#55B9ED
+}
+.wishlist-product tbody .name a {
+    color:#55B9ED;
+}
+.table .total, .table .price {
+    color:#55B9ED;
+}
+.checkout-heading {
+    border-top:4px solid #55B9ED;
+}
+.checkout-content label a {
+    color:#55B9ED;
+}
+.button-return-right-i:hover, .button-return-right:hover {color:#55B9ED;}
+a:hover i.fa.fa-trash-o-o {
+    color:#55B9ED
+}
+.cart-info td.name a {
+    color:#55B9ED;
+}
+a.input-update:hover i{
+    color: #55B9ED;
+}
+table#total  td+td {
+    color:#55B9ED;
+}
+.success a:hover {
+    color:#55B9ED
+}
+.success span:hover {color:#55B9ED}
+.success i:hover {color:#55B9ED;}
+.success i.fa.fa-thumbs-up{
+    color:#55B9ED;
+}
+.success a {color:#55B9ED;}
+.related .prev:hover, .related .next:hover {
+    color:#55B9ED
+}
+.box .box-content .box-product ul li .quick-view-button:hover {
+    color:#55B9ED
+}
+.box .box-content .box-product ul li .padding .cart a.button i {
+    color:#55B9ED;
+}
+.product-grid  ul li .padding .cart a.button i {
+    color:#55B9ED;
+}
+#search .button-search {
+    background:#55B9ED;
+    border-color:#55B9ED;
+}
+ul.sf-menu > li>a:hover, ul.sf-menu > li.sfHover>a, ul.sf-menu > ul > li.active>a  {
+    color:#55B9ED
+}
+.sf-mega-section >li a:hover, .sf-mega-section >li.sfHover a {
+    color:#55B9ED
+}
+.sf-menu-phone  li  i {color:#55B9ED;}
+.camera_caption  h1 {color:#55B9ED;}
+.camera_caption a:hover {
+    color:#55B9ED;
+}
+.camera_caption a i {
+    color:#55B9ED;
+}
+.camera_wrap .camera_pag .camera_pag_ul li:hover span,.camera_wrap .camera_pag .camera_pag_ul li:hover  {
+    background: #55B9ED;
+}
+.camera_wrap .camera_pag .camera_pag_ul li.cameracurrent>span, .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent  {
+    background: #55B9ED;
+}
+.bx-wrapper .bx-controls-direction a:hover {
+    color:#55B9ED
+}
+/*******************************************************************/
+.content_bottom:after, .content_bottom:before {
+    background: none repeat scroll 0 0 #55B9ED;
+
+}
+.content_bottom .banner{
+    background-color: #55B9ED;
+}
+footer .row li a {
+    color: #55B9ED;
+}
+
+input[type="submit"]:hover,a.button:hover {
+    background: #ffe935;
+    background: -moz-linear-gradient(top, #55B9ED 0%,  #2C97BB 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#55B9ED), color-stop(100%,#2C97BB));
+    background: -webkit-linear-gradient(top, #55B9ED 0%,#2C97BB 100%);
+    background: -o-linear-gradient(top, #55B9ED 0%,#2C97BB 100%);
+    background: -ms-linear-gradient(top, #55B9ED 0%,#2C97BB 100%);
+    background: linear-gradient(to bottom, #55B9ED 0%,#2C97BB 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55B9ED', endColorstr='#2C97BB',GradientType=0 );
+    border-right:1px solid #3067D7;
+    border-bottom:1px solid #3067D7;
+}

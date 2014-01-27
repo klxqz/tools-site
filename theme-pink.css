@@ -1,0 +1,215 @@
+a:hover {
+    color:#E44FA7
+}
+h1 {
+    color:#E44FA7;
+}
+h2 {
+    color:#E44FA7;
+}
+header {
+    background-color:#E44FA7;
+}
+.swipe-menu #currency > ul li span.act {color:#E44FA7}
+.swipe-menu #language > ul li span.act {color:#E44FA7}
+header .header-button.active>div, header .header-button>div:hover {
+    color:#E44FA7
+}
+header .header-button>ul li span:hover {color:#E44FA7}
+#body .swipe .swipe-menu li a:hover {color:#E44FA7}
+#cart .heading span.link_a {color:#E44FA7;}
+.remove span:hover i{color:#E44FA7}
+header #cart .cart .remove>span:hover {
+    color:#E44FA7
+}
+header .links a.active, header .links a:hover {
+    color:#E44FA7;
+}
+.tooltip-inner {
+    background-color: #E44FA7;
+}
+.tooltip.top .tooltip-arrow {
+    border-top-color: #E44FA7;
+}
+
+.tooltip.right .tooltip-arrow {
+    border-right-color: #E44FA7;
+}
+
+.tooltip.left .tooltip-arrow {
+    border-left-color: #E44FA7;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #E44FA7;
+}
+.breadcrumb a.last {
+    color:#E44FA7
+}
+.pagination .links a:hover,.pagination .links li.selected a {
+    border:1px solid #E44FA7;
+}
+a.button-i i {
+    color:#E44FA7
+}
+aside .box .box-content .box-product ul li .padding .cart a.button i {
+    color:#E44FA7;
+}
+.zoom-top a{
+    background-color: #E44FA7;
+}
+.box.category .box-heading {
+    color:#E44FA7
+}
+.box-category > ul > li.selected>a, .box-category > ul > li>a:hover {
+    color:#E44FA7
+}
+.box-category > ul > li ul > li > a.selected {
+    color:#E44FA7
+}
+#list_b i, #grid_b i {
+    color:#E44FA7;
+}
+#full_gallery .prev:hover, #full_gallery .next:hover{
+    color:#E44FA7
+}
+.image-additional .next:hover, .image-additional .prev:hover  {
+    color:#E44FA7
+}
+.product-info .description .product-section {
+    color:#E44FA7;
+}
+.product-info .description .product-section a{
+    color:#E44FA7
+}
+.product-info .price .price-new{
+    color:#E44FA7;
+}
+a.button-prod:hover {
+    background-color:#E44FA7;
+}
+a.button-prod i{color:#E44FA7}
+.product-info .review a:hover {
+    color:#E44FA7
+}
+.product-info .review a+a {
+    color:#E44FA7;
+}
+.tabs .tab-heading {
+    border-bottom:4px solid #E44FA7;
+}
+.compare-info td.name a {
+    color:#E44FA7
+}
+.compare-info td.td-price {
+    color:#E44FA7
+}
+.wishlist-product tbody .name a {
+    color:#E44FA7;
+}
+.table .total, .table .price {
+    color:#E44FA7;
+}
+.checkout-heading {
+    border-top:4px solid #E44FA7;
+}
+.checkout-content label a {
+    color:#E44FA7;
+}
+.button-return-right-i:hover, .button-return-right:hover {color:#E44FA7;}
+a:hover i.fa.fa-trash-o-o {
+    color:#E44FA7
+}
+.cart-info td.name a {
+    color:#E44FA7;
+}
+a.input-update:hover i{
+    color: #E44FA7;
+}
+table#total  td+td {
+    color:#E44FA7;
+}
+.success a:hover {
+    color:#E44FA7
+}
+.success span:hover {color:#E44FA7}
+.success i:hover {color:#E44FA7;}
+.success i.fa.fa-thumbs-up{
+    color:#E44FA7;
+}
+.success a {color:#E44FA7;}
+.related .prev:hover, .related .next:hover {
+    color:#E44FA7
+}
+.box .box-content .box-product ul li .quick-view-button:hover {
+    color:#E44FA7
+}
+.box .box-content .box-product ul li .padding .cart a.button i {
+    color:#E44FA7;
+}
+.product-grid  ul li .padding .cart a.button i {
+    color:#E44FA7;
+}
+#search .button-search {
+    background:#E44FA7;
+    border-color:#E44FA7;
+}
+ul.sf-menu > li>a:hover, ul.sf-menu > li.sfHover>a, ul.sf-menu > ul > li.active>a  {
+    color:#E44FA7
+}
+.sf-mega-section >li a:hover, .sf-mega-section >li.sfHover a {
+    color:#E44FA7
+}
+.sf-menu-phone  li  i {color:#E44FA7;}
+.camera_caption  h1 {color:#E44FA7;}
+.camera_caption a:hover {
+    color:#E44FA7;
+}
+.camera_caption a i {
+    color:#E44FA7;
+}
+.camera_wrap .camera_pag .camera_pag_ul li:hover span,.camera_wrap .camera_pag .camera_pag_ul li:hover  {
+    background: #E44FA7;
+}
+.camera_wrap .camera_pag .camera_pag_ul li.cameracurrent>span, .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent  {
+    background: #E44FA7;
+}
+
+.camera_wrap .camera_pag .camera_pag_ul li > span{
+    background-color: #000000;
+}
+
+.bx-wrapper .bx-controls-direction a:hover {
+    color:#E44FA7
+}
+/*******************************************************************/
+.content_bottom:after, .content_bottom:before {
+    background: none repeat scroll 0 0 #E44FA7;
+
+}
+.content_bottom .banner{
+    background-color: #E44FA7;
+}
+footer .row li a {
+    color: #E44FA7;
+}
+
+input[type="submit"]:hover,a.button:hover {
+    background: #ffe935;
+    background: -moz-linear-gradient(top, #E44FA7 0%,  #B11C74 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E44FA7), color-stop(100%,#B11C74));
+    background: -webkit-linear-gradient(top, #E44FA7 0%,#B11C74 100%);
+    background: -o-linear-gradient(top, #E44FA7 0%,#B11C74 100%);
+    background: -ms-linear-gradient(top, #E44FA7 0%,#B11C74 100%);
+    background: linear-gradient(to bottom, #E44FA7 0%,#B11C74 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E44FA7', endColorstr='#B11C74',GradientType=0 );
+    border-right:1px solid #8F3189;
+    border-bottom:1px solid #8F3189;
+    color: #FFFFFF;    
+}
+a.button:hover span{
+    color: #FFFFFF;
+}
+a.button-prod:hover{
+    color: #FFFFFF;
+}

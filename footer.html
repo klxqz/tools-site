@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <h3>Разделы сайта</h3>
+            <ul>
+                {foreach $wa->apps() as $a}
+                <li><a href="{$a.url}">{$a.name}</a></li>
+                {/foreach}
+            </ul>
+        </div>
+        <div class="col-sm-3">
+            <h3>Информация</h3>
+            {if $wa->site->pages()}
+            <ul>
+                {foreach $wa->site->pages() as $page}
+                <li><a href="{$page.url}" >{$page.name}</a></li>
+                {/foreach}
+            </ul>
+            {/if}
+        </div>
+        <div class="col-sm-3">
+            <h3>[s`My account`]</h3>
+            <ul>
+                {if $wa->getUrl('shop/frontend/my')}<li><a href="{$wa->getUrl('shop/frontend/my')}" >[s`My account`]</a></li>{/if}
+                {if $wa->getUrl('shop/frontend/my/myOrders')}<li><a href="{$wa->getUrl('shop/frontend/myOrders')}" >Мои заказы</a></li>{/if}  
+                {if $wa->getUrl('shop/frontend/cart')}<li><a href="{$wa->getUrl('shop/frontend/cart')}" >[s`Shopping cart`]</a></li>{/if}
+                {if $wa->getUrl('shop/frontend/checkout')}<li><a href="{$wa->getUrl('shop/frontend/checkout')}" >Оформление заказа</a></li>{/if}   
+
+            </ul>
+        </div>
+        <div class="col-sm-3">
+            <div class="foot-phone">
+                {if $wa->shop->settings('phone')}
+                <div>
+                    Тел.:						
+                    <div>{$wa->shop->settings('phone')}</div>
+                </div>
+                {/if}
+                <ul>
+                    <li><a href="#" ><i class="fa fa-facebook-square"></i>Facebook</a></li>
+                    <li><a href="#" ><i class="fa fa-twitter-square"></i>Twitter</a></li>
+                    {if $wa->blog}
+                    <!-- subscription links -->
+                    {$rss = $wa->blog->rssUrl()}
+                    {if $rss}
+                    <li><a href="{$rss}" title="[s`Subscribe`]"><i class="fa fa-rss-square"></i>[s`Subscribe`]</a></li>
+                    {/if}
+                    {/if}
+                </ul>
+            </div>
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <!-- plugin hook: 'frontend_footer' -->
+            {if isset($frontend_footer)}
+            {* @event frontend_footer.%plugin_id% *}
+            {foreach $frontend_footer as $_}{$_}{/foreach}
+            {/if}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="powered">
+                &copy; {time()|wa_datetime:"Y"}
+                <a href="{$wa_url}">{$wa->accountName()}</a>
+            </div>
+        </div>
+    </div>
+</div>

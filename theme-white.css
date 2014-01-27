@@ -1,0 +1,245 @@
+a:hover {
+    color:#C0C9D2
+}
+h1 {
+    color:#C0C9D2;
+}
+h2 {
+    color:#C0C9D2;
+}
+header {
+    background: #C0C9D2;
+}
+.swipe-menu #currency > ul li span.act {color:#C0C9D2}
+.swipe-menu #language > ul li span.act {color:#C0C9D2}
+header .header-button.active>div, header .header-button>div:hover {
+    color:#C0C9D2
+}
+header .header-button>ul li span:hover {color:#C0C9D2}
+#body .swipe .swipe-menu li a:hover {color:#C0C9D2}
+#cart .heading span.link_a {color:#C0C9D2;}
+.remove span:hover i{color:#C0C9D2}
+header #cart .cart .remove>span:hover {
+    color:##C0C9D2
+}
+header .links a.active, header .links a:hover {
+    color:#000000;
+}
+.tooltip-inner {
+    background-color: #C0C9D2;
+}
+.tooltip.top .tooltip-arrow {
+    border-top-color: #C0C9D2;
+}
+
+.tooltip.right .tooltip-arrow {
+    border-right-color: #C0C9D2;
+}
+
+.tooltip.left .tooltip-arrow {
+    border-left-color: #C0C9D2;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #C0C9D2;
+}
+.breadcrumb a.last {
+    color:#C0C9D2
+}
+.pagination .links a:hover,.pagination .links li.selected a {
+    border:1px solid #C0C9D2;
+}
+a.button-i i {
+    color:#C0C9D2
+}
+aside .box .box-content .box-product ul li .padding .cart a.button i {
+    color:#C0C9D2;
+}
+.zoom-top a{
+    background-color: #C0C9D2;
+}
+.box.category .box-heading {
+    color:#C0C9D2
+}
+.box-category > ul > li.selected>a, .box-category > ul > li>a:hover {
+    color:#000000;
+}
+.box-category > ul > li ul > li > a.selected {
+    color:#C0C9D2
+}
+#list_b i, #grid_b i {
+    color:#C0C9D2;
+}
+#full_gallery .prev:hover, #full_gallery .next:hover{
+    color:#C0C9D2
+}
+.image-additional .next:hover, .image-additional .prev:hover  {
+    color:#C0C9D2
+}
+.product-info .description .product-section {
+    color:#C0C9D2;
+}
+.product-info .description .product-section a{
+    color:#C0C9D2
+}
+.product-info .price .price-new{
+    color:#C0C9D2;
+}
+a.button-prod:hover {
+    background-color:#C0C9D2;
+}
+a.button-prod i{color:#C0C9D2}
+.product-info .review a:hover {
+    color:#C0C9D2
+}
+.product-info .review a+a {
+    color:#C0C9D2;
+}
+.tabs .tab-heading {
+    border-bottom:4px solid #C0C9D2;
+}
+.compare-info td.name a {
+    color:#C0C9D2
+}
+.compare-info td.td-price {
+    color:#C0C9D2
+}
+.wishlist-product tbody .name a {
+    color:#C0C9D2;
+}
+.table .total, .table .price {
+    color:#C0C9D2;
+}
+.checkout-heading {
+    border-top:4px solid #C0C9D2;
+}
+.checkout-content label a {
+    color:#C0C9D2;
+}
+.button-return-right-i:hover, .button-return-right:hover {color:#C0C9D2;}
+a:hover i.fa.fa-trash-o-o {
+    color:#C0C9D2
+}
+.cart-info td.name a {
+    color:#C0C9D2;
+}
+a.input-update:hover i{
+    color: #C0C9D2;
+}
+table#total  td+td {
+    color:#C0C9D2;
+}
+.success a:hover {
+    color:#C0C9D2
+}
+.success span:hover {color:#C0C9D2}
+.success i:hover {color:#C0C9D2;}
+.success i.fa.fa-thumbs-up{
+    color:#C0C9D2;
+}
+.success a {color:#C0C9D2;}
+.related .prev:hover, .related .next:hover {
+    color:#C0C9D2
+}
+.box .box-content .box-product ul li .quick-view-button:hover {
+    color:#C0C9D2
+}
+.box .box-content .box-product ul li .padding .cart a.button i {
+    color:#C0C9D2;
+}
+.product-grid  ul li .padding .cart a.button i {
+    color:#C0C9D2;
+}
+#search .button-search {
+    background:#C0C9D2;
+    border-color:#C0C9D2;
+}
+ul.sf-menu > li>a:hover, ul.sf-menu > li.sfHover>a, ul.sf-menu > ul > li.active>a  {
+    color:#C0C9D2
+}
+.sf-mega-section >li a:hover, .sf-mega-section >li.sfHover a {
+    color:#C0C9D2
+}
+.sf-menu-phone  li  i {color:#C0C9D2;}
+.camera_caption  h1 {color:#C0C9D2;}
+.camera_caption a:hover {
+    color:#C0C9D2;
+}
+.camera_caption a i {
+    color:#C0C9D2;
+}
+.camera_wrap .camera_pag .camera_pag_ul li:hover span,.camera_wrap .camera_pag .camera_pag_ul li:hover  {
+    background: #C0C9D2;
+}
+.camera_wrap .camera_pag .camera_pag_ul li.cameracurrent>span, .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent  {
+    background: #C0C9D2;
+}
+
+.camera_wrap .camera_pag .camera_pag_ul li > span{
+    background-color: #000000;
+}
+
+.bx-wrapper .bx-controls-direction a:hover {
+    color:#C0C9D2
+}
+/*******************************************************************/
+.content_bottom:after, .content_bottom:before {
+    background: none repeat scroll 0 0 #C0C9D2;
+
+}
+.content_bottom .banner{
+    background-color: #C0C9D2;
+}
+footer .row li a {
+    color: #C0C9D2;
+}
+
+input[type="submit"]:hover,a.button:hover {
+    background: #ffe935;
+    background: -moz-linear-gradient(top, #C0C9D2 0%,  #616A7B 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#C0C9D2), color-stop(100%,#616A7B));
+    background: -webkit-linear-gradient(top, #C0C9D2 0%,#616A7B 100%);
+    background: -o-linear-gradient(top, #C0C9D2 0%,#616A7B 100%);
+    background: -ms-linear-gradient(top, #C0C9D2 0%,#616A7B 100%);
+    background: linear-gradient(to bottom, #C0C9D2 0%,#616A7B 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#C0C9D2', endColorstr='#616A7B',GradientType=0 );
+    border-right:1px solid #3E4758;
+    border-bottom:1px solid #3E4758;
+    color: #FFFFFF;    
+}
+a.button:hover span{
+    color: #FFFFFF;
+}
+a.button-prod:hover{
+    color: #FFFFFF;
+}
+.box.category .box-content {
+    border-bottom:1px solid #262626;
+    background-color:#F7F4EE;
+}
+.box-category > ul > li {
+    background-color:#F7F4EE;
+    border-top:1px solid #C5C5C5;
+}
+.box.category .box-heading{
+    background: url("img/heading.png") repeat-x scroll left top #EAE9E9;
+    border: 1px solid #C5C5C5;
+    color: #544C39;
+}
+.box.category .box-content{
+    border: 1px solid #C5C5C5;
+}
+header .toprow {
+    background: url("img/heading.png") repeat-x scroll left top #EAE9E9;
+    border: 1px solid #C5C5C5;
+    color: #544C39;
+}
+.box-category > ul > li > a{
+    color: #544C39;
+}
+header .links a{
+    color: #544C39;
+}
+.box-category > ul > li > ul{
+    background-color: #E4E4E4;
+}

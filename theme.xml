@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd">
+<theme id="tools" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.0.0">
+    <name locale="en_US">Tools</name>
+    <name locale="ru_RU">Tools</name>
+    <description locale="ru_RU">Семейство адаптивных тем дизайна.</description>
+    <files>
+        <file path="index.html">
+            <description locale="en_US">Core layout of the Tools theme family</description>
+            <description locale="ru_RU">Основной макет тем дизайна семейства Tools</description>
+        </file>
+        <file path="tools.css">
+            <description locale="en_US">Core CSS of the Tools theme family</description>
+            <description locale="ru_RU">Основной файл CSS-стилей семейства тем дизайна Tools</description>
+        </file>
+        <file path="content.html" custom="0">
+            <description locale="en_US">Main layout for the Site app content</description>
+            <description locale="en_US">Основной вывод приложения «Сайт»</description>
+        </file>
+        <file path="head.html" custom="0">
+            <description locale="en_US">Site app's &lt;head&gt; instructions</description>
+            <description locale="en_US">Блок &lt;head&gt; приложения «Сайт»</description>
+        </file>
+        <file path="page.html">
+            <description locale="en_US">Static page content and navigation</description>
+            <description locale="ru_RU">Содержимое открытой страницы и навигация по страницам</description>
+        </file>
+        <file path="login.html" custom="0">
+            <description locale="en_US">Login page</description>
+            <description locale="ru_RU">Страница входа для пользователей</description>
+        </file>
+        <file path="signup.html" custom="0">
+            <description locale="en_US">Sign up page</description>
+            <description locale="ru_RU">Страница регистрации пользователей</description>
+        </file>
+        <file path="forgotpassword.html" custom="0">
+            <description locale="en_US">Forgot password page</description>
+            <description locale="ru_RU">Страница сброса пароля</description>
+        </file>
+        <file path="error.html">
+            <description locale="en_US">404 and other errors</description>
+            <description locale="ru_RU">404 и другие ошибки</description>
+        </file>
+        <file path="footer.html">
+            <description locale="en_US">Footer block</description>
+            <description locale="ru_RU">Блок "Подвал"</description>
+        </file>
+        <file path="sidebar.html">
+            <description locale="en_US">Sidebar block</description>
+            <description locale="ru_RU">Блок "Боковая панель"</description>
+        </file>
+        <file path="menu-gadget.html">
+            <description locale="en_US">menu-gadget block</description>
+            <description locale="ru_RU">Блок "menu-gadget"</description>
+        </file>
+        <file path="tools.js" custom="0">
+            <description locale="en_US">JS</description>
+            <description locale="ru_RU">JS</description>
+        </file>
+        <file path="ie6.css" custom="0">
+            <description locale="en_US">For IE 6</description>
+            <description locale="ru_RU">Для IE 6</description>
+        </file>
+        <file path="ie8.css" custom="0">
+            <description locale="en_US">For IE 8</description>
+            <description locale="ru_RU">Для IE 8</description>
+        </file>
+        <file path="ie8.css" custom="0">
+            <description locale="en_US">For IE 8</description>
+            <description locale="ru_RU">Для IE 8</description>
+        </file>
+        <file path="responsive.css" custom="0">
+            <description locale="en_US">Responsive design styles</description>
+            <description locale="ru_RU">Стили адаптивного дизайна</description>
+        </file>
+        <file path="superfish.css" custom="0">
+            <description locale="en_US">Superfish menu styles</description>
+            <description locale="ru_RU">Стили меню superfish</description>
+        </file>
+        <file path="theme-blue.css" custom="0">
+            <description locale="en_US">Color scheme "Black and Blue"</description>
+            <description locale="ru_RU">Цветовая схема "Черно-Голубой"</description>
+        </file>
+        <file path="theme-gray.css" custom="0">
+            <description locale="en_US">Color scheme "Black and Gray"</description>
+            <description locale="ru_RU">Цветовая схема "Черно-Серый"</description>
+        </file>
+        <file path="theme-green.css" custom="0">
+            <description locale="en_US">Color scheme "Black and Green"</description>
+            <description locale="ru_RU">Цветовая схема "Черно-Зеленый"</description>
+        </file>
+        <file path="theme-pink.css" custom="0">
+            <description locale="en_US">Color scheme "Black and Pink"</description>
+            <description locale="ru_RU">Цветовая схема "Черно-Розовый"</description>
+        </file>
+        <file path="theme-red.css" custom="0">
+            <description locale="en_US">Color scheme "White and Red"</description>
+            <description locale="ru_RU">Цветовая схема "Бело-Красный"</description>
+        </file>
+        <file path="theme-wblue.css" custom="0">
+            <description locale="en_US">Color scheme "White and Blue"</description>
+            <description locale="ru_RU">Цветовая схема "Бело-Голубой"</description>
+        </file>
+        <file path="theme-wblue.css" custom="0">
+            <description locale="en_US">Color scheme "White and DarkBlue"</description>
+            <description locale="ru_RU">Цветовая схема "Бело-Синий"</description>
+        </file>
+        <file path="theme-wgreen.css" custom="0">
+            <description locale="en_US">Color scheme "White and Green"</description>
+            <description locale="ru_RU">Цветовая схема "Бело-Зеленый"</description>
+        </file>
+        <file path="theme-white.css" custom="0">
+            <description locale="en_US">Color scheme "White and Gray"</description>
+            <description locale="ru_RU">Цветовая схема "Белый-Серый"</description>
+        </file>
+        <file path="theme-worange.css" custom="0">
+            <description locale="en_US">Color scheme "White and Orange"</description>
+            <description locale="ru_RU">Цветовая схема "Бело-Оранжевый"</description>
+        </file>
+    </files>
+    <settings>
+        <setting var="color_scheme" control_type="select">
+            <value></value>
+            <name locale="en_US">Color scheme</name>
+            <name locale="ru_RU">Цветовая схема</name>
+            <options>
+                <option value="">
+                    <name locale="en_US">Black and Yellow</name>
+                    <name locale="ru_RU">Черно-Желтый</name>
+                </option>
+                <option value="blue">
+                    <name locale="en_US">Black and Blue</name>
+                    <name locale="ru_RU">Черно-Голубой</name>
+                </option>
+                <option value="gray">
+                    <name locale="en_US">Black and Gray</name>
+                    <name locale="ru_RU">Черно-Серый</name>
+                </option>
+                <option value="green">
+                    <name locale="en_US">Black and Green</name>
+                    <name locale="ru_RU">Черно-Зеленый</name>
+                </option>
+                <option value="pink">
+                    <name locale="en_US">Black and Pink</name>
+                    <name locale="ru_RU">Черно-Розовый</name>
+                </option>
+                <option value="white">
+                    <name locale="en_US">White and Gray</name>
+                    <name locale="ru_RU">Белый-Серый</name>
+                </option>
+                <option value="red">
+                    <name locale="en_US">White and Red</name>
+                    <name locale="ru_RU">Бело-Красный</name>
+                </option>
+                <option value="wgreen">
+                    <name locale="en_US">White and Green</name>
+                    <name locale="ru_RU">Бело-Зеленый</name>
+                </option>
+                <option value="worange">
+                    <name locale="en_US">White and Orange</name>
+                    <name locale="ru_RU">Бело-Оранжевый</name>
+                </option>
+                <option value="wblue">
+                    <name locale="en_US">White and Blue</name>
+                    <name locale="ru_RU">Бело-Голубой</name>
+                </option>
+                <option value="wdblue">
+                    <name locale="en_US">White and DarkBlue</name>
+                    <name locale="ru_RU">Бело-Синий</name>
+                </option>
+                
+            </options>
+        </setting>
+        
+        <setting var="bg_image" control_type="select">
+            <value></value>
+            <name locale="en_US">Background</name>
+            <name locale="ru_RU">Фон</name>
+            <options>
+                <option value="">
+                    <name locale="en_US">None</name>
+                    <name locale="ru_RU">Нет</name>
+                </option>  
+                <option value="cloth.jpg">
+                    <name locale="en_US">cloth</name>
+                    <name locale="ru_RU">Ткань</name>
+                </option>
+                <option value="grey.jpg">
+                    <name locale="en_US">grey</name>
+                    <name locale="ru_RU">Серый</name>
+                </option> 
+                <option value="red.jpg">
+                    <name locale="en_US">red</name>
+                    <name locale="ru_RU">Красный</name>
+                </option> 
+                <option value="blue.jpg">
+                    <name locale="en_US">blue</name>
+                    <name locale="ru_RU">Голубой</name>
+                </option> 
+                <option value="green.jpg">
+                    <name locale="en_US">green</name>
+                    <name locale="ru_RU">Зеленый</name>
+                </option>  
+                <option value="purple.jpg">
+                    <name locale="en_US">purple</name>
+                    <name locale="ru_RU">Фиолетовый</name>
+                </option> 
+                <option value="yellow.jpg">
+                    <name locale="en_US">yellow</name>
+                    <name locale="ru_RU">Желтый</name>
+                </option>  
+            </options>
+        </setting>
+
+    </settings>
+</theme>
