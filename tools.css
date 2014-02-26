@@ -1826,8 +1826,7 @@ li.parent> i {
 }
 .box-category > ul > li>ul ul {
     display:none;
-
-    padding:12px 20px
+    padding: 5px 0px 5px 10px;
 }
 .box-category > ul > li span.close:hover {
     cursor:pointer;
