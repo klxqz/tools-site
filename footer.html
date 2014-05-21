@@ -30,7 +30,7 @@
         </div>
         <div class="col-sm-3">
             <div class="foot-phone">
-                {if $wa->shop->settings('phone')}
+                {if $wa->shop && $wa->shop->settings('phone')}
                 <div>
                     Тел.:						
                     <div>{$wa->shop->settings('phone')}</div>
