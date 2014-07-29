@@ -119,6 +119,12 @@
         </file>
     </files>
     <settings>
+        <setting var="logo" control_type="image">
+            <value>img/logo.png</value>
+            <filename>img/logo.*</filename>
+            <name locale="en_US">Company Logo</name>
+            <name locale="ru_RU">Логотип компании</name>
+        </setting>
         <setting var="color_scheme" control_type="select">
             <value></value>
             <name locale="en_US">Color scheme</name>

@@ -193,12 +193,11 @@
                                         </div>
                                         {/if}
                                     </div>
-
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <div id="logo"><a href="{$wa_url}" ><img src="{$wa_theme_url}img/logo.png"  title="{$wa->accountName()}" alt="{$wa->accountName()}" /></a></div>
+                                    <div id="logo"><a href="{$wa_url}" ><img src="{$wa_theme_url}{$theme_settings.logo}"  title="{$wa->accountName()}" alt="{$wa->accountName()}" /></a></div>
 
                                     {if $wa->getUrl('shop/frontend/cart')}
                                     <!-- shopping cart info -->
