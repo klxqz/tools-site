@@ -1,4 +1,28 @@
-
+/********************************** swipe ********************************************/
+jQuery(document).ready(function() {
+    jQuery('body .swipe-left').swiperight(function() {
+        jQuery('body').addClass('ind');
+    })
+    jQuery('body').swipeleft(function() {
+        jQuery('body').removeClass('ind');
+    })
+    jQuery('#page').click(function() {
+        if (jQuery(this).parents('body').hasClass('ind')) {
+            jQuery(this).parents('body').removeClass('ind');
+            return false
+        }
+    })
+    jQuery('.swipe-control').click(function() {
+        if (jQuery(this).parents('body').hasClass('ind')) {
+            jQuery(this).parents('body').removeClass('ind');
+            return false
+        }
+        else {
+            jQuery(this).parents('body').addClass('ind');
+            return false
+        }
+    })
+});
 
 
 /********************************************************************************menu********************************************************/
@@ -304,7 +328,74 @@ $(document).ready(function() {
 });
 
 
+$(document).ready(function() {
+    $(".mini-cart-info").on('click', '.remove', function() {
+        var product_block = $(this).closest('tr');
+        var cart_total = $("#cart");
+        $.post(cart_url + 'delete/', {
+            id: product_block.data('id')
+        }, function(response) {
+            if (response.status == 'ok') {
+                product_block.remove();
+                cart_total.find('.shopping_cart_total').html(response.data.total);
+                cart_total.find('.shopping_cart_discount').html(response.data.discount);
+                cart_total.find('#cart-total2').html(response.data.count);
+            }
+        }, 'json');
+        return false;
+    });
+});
 
-
-
-
+jQuery(function($) {
+    $(document).ready(function() {
+        if (!is_autocomplete) {
+            return false;
+        }
+        $('#search_query_top').autocomplete({
+            delay: 500,
+            minLength: 3,
+            source: function(request, response) {
+                request.term = request.term.replace(/^\s+|\s+$/g, '');
+                var query = request.term.replace(/\s+/g, '+');
+                $.ajax({
+                    url: shop_search_url + '?query=' + encodeURIComponent(query),
+                    type: "GET",
+                    dataType: "html",
+                    success: function(data) {
+                        var items = $.map($(data).find('#product-list .product-grid ul li:lt(' + 5 + ') .ajax_product_info'), function(item) {
+                            return {
+                                label: $(item).data('name'),
+                                value: $(item).data('name'),
+                                url: $(item).data('url'),
+                                text: '<div>\
+                                        <img src="' + $(item).data('img') + '" />\
+                                        <span class="item-name">' + $(item).data('name') + '</span>\
+                                        <span class="item-price">' + $(item).data('price') + '</span>\
+                                        </div>'
+                            }
+                        });
+                        if ($(data).find('#product-list ul li').length > 5) {
+                            items[items.length] = {
+                                label: '' + query,
+                                value: '' + query,
+                                url: shop_search_url + '?query=' + encodeURIComponent(query),
+                                text: 'Показать все'
+                            }
+                        }
+                        response(items);
+                    }
+                });
+            },
+            select: function(event, ui) {
+                location.href = ui.item.url;
+            }
+        }).data("autocomplete")._renderMenu = function(ul, items) {
+            $.each(items, function(index, item) {
+                $('<li></li>')
+                        .data('item.autocomplete', item)
+                        .append('<a href="' + item.url + '">' + item.text + '</a>')
+                        .appendTo(ul);
+            });
+        };
+    });
+});

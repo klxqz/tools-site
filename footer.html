@@ -1,50 +1,97 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-3">
-            <h3>Разделы сайта</h3>
+            <h3>[`Site links`]</h3>
             <ul>
                 {foreach $wa->apps() as $a}
-                <li><a href="{$a.url}">{$a.name}</a></li>
+                    <li>
+                        <a href="{$a.url}">{$a.name}</a>
+                    </li>
                 {/foreach}
             </ul>
         </div>
         <div class="col-sm-3">
-            <h3>Информация</h3>
-            {if $wa->site->pages()}
-            <ul>
-                {foreach $wa->site->pages() as $page}
-                <li><a href="{$page.url}" >{$page.name}</a></li>
-                {/foreach}
-            </ul>
+            <h3>[`Information`]</h3>
+            {if $theme_settings.source_footer_info == 'shop_pages' && $wa->shop}
+                {$footer_pages = $wa->shop->pages()}
+            {else}
+                {$footer_pages = $wa->site->pages()}
+            {/if}
+            {if !empty($footer_pages)}
+                {wa_print_tree  unfolded=false tree=$footer_pages elem ='<a href=":url" title=":title">:name</a>'}
             {/if}
         </div>
         <div class="col-sm-3">
-            <h3>[s`My account`]</h3>
+            <h3>[`My account`]</h3>
             <ul>
-                {if $wa->getUrl('shop/frontend/my')}<li><a href="{$wa->getUrl('shop/frontend/my')}" >[s`My account`]</a></li>{/if}
-                {if $wa->getUrl('shop/frontend/my/myOrders')}<li><a href="{$wa->getUrl('shop/frontend/myOrders')}" >Мои заказы</a></li>{/if}  
-                {if $wa->getUrl('shop/frontend/cart')}<li><a href="{$wa->getUrl('shop/frontend/cart')}" >[s`Shopping cart`]</a></li>{/if}
-                {if $wa->getUrl('shop/frontend/checkout')}<li><a href="{$wa->getUrl('shop/frontend/checkout')}" >Оформление заказа</a></li>{/if}   
-
+                {if $wa->isAuthEnabled()}
+                    <!-- auth links -->
+                    {if $wa->user()->isAuth()}
+                        {if $wa->shop}
+                            <li class="login_h">
+                                <a href="{$wa->getUrl('shop/frontend/my')}">[`My account`]</a>
+                            </li> 
+                        {else}
+                            <li>
+                                <a href="#">{$wa->user('name')}</a>
+                            </li>
+                        {/if}
+                        <li class="login_h">
+                            <a href="?logout">[s`Log out`]</a>
+                        </li>
+                    {else}
+                        <li class="login_h">
+                            <a href="{$wa->loginUrl()}" >[s`Log in`]</a>
+                        </li> 
+                        <li>
+                            <a href="{$wa->signupUrl()}" >[s`Sign up`]</a>
+                        </li>                                                  
+                    {/if}
+                    <!-- auth links -->
+                {/if}
+                {if $wa->getUrl('shop/frontend/my/myOrders')}<li><a href="{$wa->getUrl('shop/frontend/myOrders')}" >[`My orders`]</a></li>{/if}  
+                {if $wa->getUrl('shop/frontend/cart')}<li><a href="{$wa->getUrl('shop/frontend/cart')}" >[`Shopping cart`]</a></li>{/if}
+                {if $wa->getUrl('shop/frontend/checkout')}<li><a href="{$wa->getUrl('shop/frontend/checkout')}" >[`Checkout`]</a></li>{/if}   
             </ul>
         </div>
         <div class="col-sm-3">
             <div class="foot-phone">
                 {if $wa->shop && $wa->shop->settings('phone')}
-                <div>
-                    Тел.:						
-                    <div>{$wa->shop->settings('phone')}</div>
-                </div>
+                    <div>
+                        [`Tel`].:						
+                        <div>{$wa->shop->settings('phone')}</div>
+                    </div>
+                {elseif $theme_settings.site_phone}
+                    <div>
+                        [`Tel`].:						
+                        <div>{$theme_settings.site_phone}</div>
+                    </div>
                 {/if}
                 <ul>
-                    <li><a href="#" ><i class="fa fa-facebook-square"></i>Facebook</a></li>
-                    <li><a href="#" ><i class="fa fa-twitter-square"></i>Twitter</a></li>
-                    {if $wa->blog}
-                    <!-- subscription links -->
-                    {$rss = $wa->blog->rssUrl()}
-                    {if $rss}
-                    <li><a href="{$rss}" title="[s`Subscribe`]"><i class="fa fa-rss-square"></i>[s`Subscribe`]</a></li>
+                    {if !empty($theme_settings.footer_facebook)}
+                        <li>
+                            <a href="{$theme_settings.footer_facebook}" ><i class="fa fa-facebook-square"></i>Facebook</a>
+                        </li>
                     {/if}
+                    {if !empty($theme_settings.footer_twitter)}
+                        <li>
+                            <a href="{$theme_settings.footer_twitter}" ><i class="fa fa-twitter-square"></i>Twitter</a>
+                        </li>
+                    {/if}
+                    {if !empty($theme_settings.footer_vk)}
+                        <li>
+                            <a href="{$theme_settings.footer_vk}" ><i class="fa fa-vk"></i>[`VKontakte`]</a>
+                        </li>
+                    {/if}
+
+                    {if $wa->blog}
+                        <!-- subscription links -->
+                        {$rss = $wa->blog->rssUrl()}
+                        {if $rss}
+                            <li>
+                                <a href="{$rss}" title="[s`Subscribe`]"><i class="fa fa-rss-square"></i>[s`Subscribe`]</a>
+                            </li>
+                        {/if}
                     {/if}
                 </ul>
             </div>
@@ -62,11 +109,11 @@
         <div class="col-sm-12">
             <!-- plugin hook: 'frontend_footer' -->
             {if isset($frontend_footer)}
-            {* @event frontend_footer.%plugin_id% *}
+                {* @event frontend_footer.%plugin_id% *}
             {foreach $frontend_footer as $_}{$_}{/foreach}
-            {/if}
-        </div>
+        {/if}
     </div>
+</div>
 </div>
 
 <div class="container">
@@ -75,6 +122,7 @@
             <div id="powered">
                 &copy; {time()|wa_datetime:"Y"}
                 <a href="{$wa_url}">{$wa->accountName()}</a>
+                &copy; [`Site design`] <a href="http://wa-plugins.ru/" title="[`Designing and developing websites`]">wa-plugins.ru</a>
             </div>
         </div>
     </div>

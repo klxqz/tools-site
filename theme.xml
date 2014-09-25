@@ -119,6 +119,80 @@
         </file>
     </files>
     <settings>
+        <setting var="main_code" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <script>
+                    $(function(){
+                        $('.p-title').closest('.field').addClass('custom-field');
+                    });
+                </script>
+                <style>
+                .field.custom-field .name{
+                    float:none;width: auto;
+                }
+                .field.custom-field .value{
+                    display:none;
+                }
+                .p-title{
+                    font-weight: bold;color: #000;
+                }
+                .wa-theme-image-select{
+                    max-width: 750px;
+                }
+                .wa-theme-image-select a img{
+                    height: 100px;width: 100px;
+                }
+                </style>
+                <p class="p-title"></p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <script>
+                    $(function(){
+                        $('.p-title').closest('.field').addClass('custom-field');
+                    });
+                </script>
+                <style>
+                .field.custom-field .name{
+                    float:none;width: auto;
+                }
+                .field.custom-field .value{
+                    display:none;
+                }
+                .p-title{
+                    font-size:120%;font-weight: bold;color: #000;
+                }
+                .wa-theme-image-select{
+                    max-width: 750px;
+                }
+                .wa-theme-image-select a img{
+                    height: 100px;width: 100px;
+                }
+                </style>
+                <p class="p-title"></p>		
+                ]]>
+            </name>
+        </setting>
+        
+        <setting var="customization_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Customization</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Кастомизация</p>	
+                ]]>
+            </name>
+        </setting>
+        
         <setting var="logo" control_type="image">
             <value>img/logo.png</value>
             <filename>img/logo.*</filename>
@@ -178,45 +252,173 @@
             </options>
         </setting>
         
-        <setting var="bg_image" control_type="select">
-            <value></value>
+        <setting var="bg_image" control_type="image_select">
+            <value>img/bg/no_bg.png</value>
             <name locale="en_US">Background</name>
             <name locale="ru_RU">Фон</name>
             <options>
-                <option value="">
-                    <name locale="en_US">None</name>
-                    <name locale="ru_RU">Нет</name>
-                </option>  
-                <option value="cloth.jpg">
-                    <name locale="en_US">cloth</name>
-                    <name locale="ru_RU">Ткань</name>
-                </option>
-                <option value="grey.jpg">
-                    <name locale="en_US">grey</name>
-                    <name locale="ru_RU">Серый</name>
-                </option> 
-                <option value="red.jpg">
-                    <name locale="en_US">red</name>
-                    <name locale="ru_RU">Красный</name>
-                </option> 
-                <option value="blue.jpg">
-                    <name locale="en_US">blue</name>
-                    <name locale="ru_RU">Голубой</name>
-                </option> 
-                <option value="green.jpg">
-                    <name locale="en_US">green</name>
-                    <name locale="ru_RU">Зеленый</name>
-                </option>  
-                <option value="purple.jpg">
-                    <name locale="en_US">purple</name>
-                    <name locale="ru_RU">Фиолетовый</name>
-                </option> 
-                <option value="yellow.jpg">
-                    <name locale="en_US">yellow</name>
-                    <name locale="ru_RU">Желтый</name>
-                </option>  
+                <option value="img/bg/no_bg.png"></option>                
+                <option value="img/bg/cloth.jpg"></option>
+                <option value="img/bg/grey.jpg"></option>
+                <option value="img/bg/red.jpg"></option>
+                <option value="img/bg/blue.jpg"></option>
+                <option value="img/bg/green.jpg"></option>
+                <option value="img/bg/purple.jpg"></option>
+                <option value="img/bg/yellow.jpg"></option>
             </options>
         </setting>
+        <setting var="basic_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Setting basic elements</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Настройка основных элементов.</p>	
+                ]]>
+            </name>
+        </setting>
+        <setting var="site_phone" control_type="text">
+            <value>8 (999) 999 99 99</value>
+            <name locale="en_US">Phone</name>
+            <name locale="ru_RU">Телефон</name>
+        </setting>
+        <setting var="footer_facebook" control_type="text">
+            <value>https://www.facebook.com/</value>
+            <name locale="en_US">Link to facebook</name>
+            <name locale="ru_RU">Ссылка на facebook</name>
+        </setting>
+        <setting var="footer_twitter" control_type="text">
+            <value>http://twiter.ru/</value>
+            <name locale="en_US">Link to twitter</name>
+            <name locale="ru_RU">Ссылка на twitter</name>
+        </setting>
+        <setting var="footer_vk" control_type="text">
+            <value>http://vk.com/</value>
+            <name locale="en_US">Link to vk</name>
+            <name locale="ru_RU">Ссылка на ВКонтакте</name>
+        </setting>
+        
+        <setting var="source_main_menu" control_type="select">
+            <value>shop_categories</value>
+            <name locale="en_US">Source for the main top menu</name>
+            <name locale="ru_RU">Источник для главного верхнего меню</name>
+            <options>
+                <option value="site_pages">
+                    <name locale="en_US">Application «Site» - pages</name>
+                    <name locale="ru_RU">Приложение «Сайт» - страницы</name>
+                </option>
+                <option value="shop_pages">
+                    <name locale="en_US">Application «Shop» - pages</name>
+                    <name locale="ru_RU">Приложение «Магазин» - страницы</name>
+                </option>
+                <option value="shop_categories">
+                    <name locale="en_US">Application «Shop» - categories</name>
+                    <name locale="ru_RU">Приложение «Магазин» - категории</name>
+                </option>
+            </options>
+        </setting>
+        
+        <setting var="source_footer_info" control_type="select">
+            <value>shop_pages</value>
+            <name locale="en_US">Source for block «Information» at the bottom of the page</name>
+            <name locale="ru_RU">Источник для блока «Информация» в нижней части страницы</name>
+            <options>
+                <option value="site_pages">
+                    <name locale="en_US">Application «Site» - pages</name>
+                    <name locale="ru_RU">Приложение «Сайт» - страницы</name>
+                </option>
+                <option value="shop_pages">
+                    <name locale="en_US">Application «Shop» - pages</name>
+                    <name locale="ru_RU">Приложение «Магазин» - страницы</name>
+                </option>
+            </options>
+        </setting>
+        
+        <setting var="is_autocomplete" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Auto Search products</name>
+            <name locale="ru_RU">Автопоиск товаров (выпадающий список товаров появляется при вводе первых символов). Необходимо приложение «Магазин»</name>
+        </setting>
+        
+        <setting var="scroll_up" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Scroll up</name>
+            <name locale="ru_RU">Прокрутка вверху</name>
+        </setting>
+        
 
     </settings>
+    <locales>
+        <locale>
+            <msgid>Home</msgid>
+            <msgstr locale="ru_RU">Главная</msgstr>
+        </locale>
+        <locale>
+            <msgid>My account</msgid>
+            <msgstr locale="ru_RU">Личный кабинет</msgstr>
+        </locale>
+        <locale>
+            <msgid>My orders</msgid>
+            <msgstr locale="ru_RU">Мои заказы</msgstr>
+        </locale>
+        <locale>
+            <msgid>Shopping cart</msgid>
+            <msgstr locale="ru_RU">Корзина</msgstr>
+        </locale>
+        <locale>
+            <msgid>Checkout</msgid>
+            <msgstr locale="ru_RU">Оформление заказа</msgstr>
+        </locale>
+        <locale>
+            <msgid>Currency</msgid>
+            <msgstr locale="ru_RU">Валюта</msgstr>
+        </locale>
+        <locale>
+            <msgid>Remove</msgid>
+            <msgstr locale="ru_RU">Удалить</msgstr>
+        </locale>
+        <locale>
+            <msgid>Tel</msgid>
+            <msgstr locale="ru_RU">Тел</msgstr>
+        </locale>
+        <locale>
+            <msgid>VKontakte</msgid>
+            <msgstr locale="ru_RU">ВКонтакте</msgstr>
+        </locale>
+        <locale>
+            <msgid>Information</msgid>
+            <msgstr locale="ru_RU">Информация</msgstr>
+        </locale>
+        <locale>
+            <msgid>Site links</msgid>
+            <msgstr locale="ru_RU">Разделы сайта</msgstr>
+        </locale>
+        <locale>
+            <msgid>Site design</msgid>
+            <msgstr locale="ru_RU">Дизайн сайта</msgstr>
+        </locale> 
+        <locale>
+            <msgid>Designing and developing websites</msgid>
+            <msgstr locale="ru_RU">Создание и разработка сайтов</msgstr>
+        </locale>
+        <locale>
+            <msgid>Catalog</msgid>
+            <msgstr locale="ru_RU">Каталог</msgstr>
+        </locale>
+        <locale>
+            <msgid>Discount</msgid>
+            <msgstr locale="ru_RU">Скидка</msgstr>
+        </locale>
+        <locale>
+            <msgid>Total</msgid>
+            <msgstr locale="ru_RU">Итого</msgstr>
+        </locale>
+        
+
+    </locales>
 </theme>

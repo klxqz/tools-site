@@ -5,7 +5,7 @@
         <div class="box-heading">Категории</div>
         <div class="box-content">
             <div class="box-category">
-                {wa_print_tree tree=$wa->shop->categories(0, null, true) selected=$selected_category unfolded=true collapsible_class='parent' class="menu-v category-tree" elem ='<a href=":url" title=":name">:name</a>'}
+                {wa_print_tree tree=$wa->shop->categories(0, null, true) selected=$selected_category unfolded=true collapsible_class='parent' class="category-tree" elem ='<a href=":url" title=":name">:name</a>'}
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@
     {if isset($category)}{$selected_category=$category.id}{else}{$selected_category=null}{/if}
     <div class="box-category">
         <!-- page tree -->
-        {wa_print_tree tree=$wa->site->pages() class="menu-v" attrs = 'id="page-list"' elem ='<a href=":url">:name</a>' collapsible_class='parent' selected=$page.id|default:0 unfolded=true}
+        {wa_print_tree tree=$wa->site->pages() attrs = 'id="page-list"' elem ='<a href=":url">:name</a>' collapsible_class='parent' selected=$page.id|default:0 unfolded=true}
 
     </div>
 </div>

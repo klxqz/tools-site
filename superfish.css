@@ -28,7 +28,7 @@ ul.sf-menu > li > a {
 	line-height:21px;
 	text-transform:uppercase;
 }
-ul.sf-menu > li>a:hover, ul.sf-menu > li.sfHover>a, ul.sf-menu > ul > li.active>a  {
+ul.sf-menu > li>a:hover, ul.sf-menu > li.sfHover>a, ul.sf-menu > ul > li.selected>a  {
 	color:#ffe402
 	}
 .sf-menu .sf-mega {
@@ -171,11 +171,11 @@ ul.sf-menu > li>a:hover, ul.sf-menu > li.sfHover>a, ul.sf-menu > ul > li.active>
 
   /** dropdown **/
   .sf-menu-phone ul {  width: auto;  padding: 0px 0px;  display: none;  }
-  .sf-menu-phone  li.active > a > span {color: inherit;}
-  .sf-menu-phone  li.active > a,
+  .sf-menu-phone  li.selected > a > span {color: inherit;}
+  .sf-menu-phone  li.selected > a,
   .sf-menu-phone  li:hover > a { color: #fff; background: #4a4a4a; }
 
-  .sf-menu-phone li li.active > a,
+  .sf-menu-phone li li.selected > a,
   .sf-menu-phone li li a:hover {color: #ccc;}
   
   

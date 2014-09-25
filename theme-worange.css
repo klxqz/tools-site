@@ -194,7 +194,9 @@ footer .row li a {
     color: #FEA904;
 }
 
-input[type="submit"]:hover,a.button:hover {
+input[type="submit"]:hover,
+input[type="button"]:hover,
+a.button:hover {
     background: #ffe935;
     background: -moz-linear-gradient(top, #FEA904 0%,  #C88F00 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FEA904), color-stop(100%,#C88F00));

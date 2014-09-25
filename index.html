@@ -14,17 +14,26 @@
 
         <!-- js -->
         <script type="text/javascript" src="{$wa_url}wa-content/js/jquery/jquery-1.8.2.min.js"></script>
+        {if $theme_settings.is_autocomplete}
+            <link href="{$wa_url}wa-content/css/jquery-ui/base/jquery.ui.theme.css?v{$wa_theme_version}" rel="stylesheet" type="text/css">
+            <link href="{$wa_url}wa-content/css/jquery-ui/base/jquery.ui.autocomplete.css?v{$wa_theme_version}" rel="stylesheet" type="text/css">
+            <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.core.min.js?v{$wa_theme_version}"></script>
+            <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.widget.min.js?v{$wa_theme_version}"></script>
+            <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.position.min.js?v{$wa_theme_version}"></script>
+            <script type="text/javascript" src="{$wa_url}wa-content/js/jquery-ui/jquery.ui.autocomplete.min.js?v{$wa_theme_version}"></script>
+        {/if}
 
+        <script type='text/javascript' src='{$wa_theme_url}jquery.mobile.customized.min.js'></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, initial-scale=1.0">
         {if $wa->isMobile()}
-        <script>
-            if (navigator.userAgent.match(/Android/i)) {
-                var viewport = document.querySelector("meta[name=viewport]");
-            }
-            if (navigator.userAgent.match(/Android/i)) {
-                window.scrollTo(0, 1);
-            }
-        </script> 
+            <script>
+                if (navigator.userAgent.match(/Android/i)) {
+                    var viewport = document.querySelector("meta[name=viewport]");
+                }
+                if (navigator.userAgent.match(/Android/i)) {
+                    window.scrollTo(0, 1);
+                }
+            </script> 
         {/if}
         <link href="{$wa_theme_url}css/bootstrap.min.css"  rel="stylesheet" type="text/css" />
         <link href="{$wa_theme_url}tools.css" rel="stylesheet" type="text/css"  />
@@ -39,9 +48,15 @@
         <script type="text/javascript" src="{$wa_theme_url}html5.js" ></script>
         <![endif]-->
         {if $wa->isMobile()}
-        <script type="text/javascript" src="{$wa_theme_url}jquery.mobile-events.js" ></script>
+
+            <script type="text/javascript" src="{$wa_theme_url}jquery.mobile-events.js" ></script>
         {/if}
         <script type="text/javascript" src="{$wa_theme_url}superfish.js" ></script>
+        <script type="text/javascript">
+            var is_autocomplete = '{$theme_settings.is_autocomplete}';
+            var cart_url = '{$wa->getUrl("shop/frontend/cart")}';
+            var shop_search_url = '{$wa->getUrl("/frontend/search")}';
+        </script>
         <script type="text/javascript" src="{$wa_theme_url}tools.js" ></script>
 
         <!--[if  IE 8]> 
@@ -65,16 +80,13 @@
         {include file="`$wa_active_theme_path`/head.html" inline}
 
         {if !empty($theme_settings.color_scheme)}
-        <link href="{$wa_theme_url}theme-{$theme_settings.color_scheme}.css" rel="stylesheet" type="text/css"  />
+            <link href="{$wa_theme_url}theme-{$theme_settings.color_scheme}.css" rel="stylesheet" type="text/css"  />
         {/if}
         <style>
-            {if !empty($theme_settings.bg_image)}
-            html, body { background: url('{$wa_theme_url}img/{$theme_settings.bg_image}'); }
+            {if !empty($theme_settings.bg_image) && $theme_settings.bg_image != 'img/bg/no_bg.png'}
+                html, body { background: url('{$wa_theme_url}{$theme_settings.bg_image}'); }
             {/if}
         </style>
-
-
-
         {$wa->headJs()} {* links Google Analytics tracking code and current site's custom JS (Site app) *}
     </head>
     <body>
@@ -83,251 +95,305 @@
             <div class="swipe">
                 <div class="swipe-menu">
                     <ul class="links">
-                        <li class="first"><a class="active" href="{$wa_url}" ><i class="fa fa-home"></i>Главная</a></li>
-                        {if $wa->getUrl('shop/frontend/my')}<li><a href="{$wa->getUrl('shop/frontend/my')}"><i class="fa fa-user"></i>[s`My account`]</a></li>{/if}
-                        {if $wa->getUrl('shop/frontend/my/myOrders')}<li><a href="{$wa->getUrl('shop/frontend/myOrders')}" ><i class="fa fa-list-ol"></i>Мои заказы</a></li>{/if}  
-                        {if $wa->getUrl('shop/frontend/cart')}<li><a href="{$wa->getUrl('shop/frontend/cart')}"><i class="fa fa-shopping-cart"></i>[s`Shopping cart`]</a></li>{/if}
-                        {if $wa->getUrl('shop/frontend/checkout')}<li><a href="{$wa->getUrl('shop/frontend/checkout')}" ><i class="fa fa-check"></i>Оформление заказа</a></li>{/if}
+
+                        <li class="first"><a class="active" href="{$wa_url}" ><i class="fa fa-home"></i>[`Home`]</a></li>
+
+                        {if $wa->getUrl('shop/frontend/cart')}<li><a href="{$wa->getUrl('shop/frontend/cart')}"><i class="fa fa-shopping-cart"></i>[`Shopping cart`]</a></li>{/if}
+                        {if $wa->getUrl('shop/frontend/checkout')}<li><a href="{$wa->getUrl('shop/frontend/checkout')}" ><i class="fa fa-check"></i>[`Checkout`]</a></li>{/if}
+                        {if $wa->getUrl('shop/frontend/my/myOrders')}<li><a href="{$wa->getUrl('shop/frontend/myOrders')}" ><i class="fa fa-list-ol"></i>[`My orders`]</a></li>{/if} 
 
                         {if $wa->isAuthEnabled()}
-                        <!-- auth links -->
-                        {if $wa->user()->isAuth()}
-                        {if $wa->getUrl('shop/frontend/my')}
-                        <li class="login_h"><a href="{$wa->getUrl('shop/frontend/my')}"><i class="fa fa-user"></i>[s`My account`]</a></li> 
-                        {else}
-                        <li><a href="#"><i class="fa fa-user"></i>{$wa->user('name')}</a></li>
-                        {/if}
-                        <li class="login_h"><a href="?logout"><i class="fa fa-lock"></i>[s`Log out`]</a></li>
-                        {else}
-                        <li class="login_h"><a href="{$wa->loginUrl()}" ><i class="fa fa-lock"></i>[s`Log in`]</a></li> 
-                        <li><a href="{$wa->signupUrl()}" ><i class="fa fa-user"></i>[s`Sign up`]</a></li>                                                  
-                        {/if}
-                        <!-- auth links -->
+                            <!-- auth links -->
+                            {if $wa->user()->isAuth()}
+                                {if $wa->shop}
+                                    <li class="login_h">
+                                        <a href="{$wa->getUrl('shop/frontend/my')}"><i class="fa fa-user"></i>[`My account`]</a>
+                                    </li> 
+                                {else}
+                                    <li>
+                                        <a href="#"><i class="fa fa-user"></i>{$wa->user('name')}</a>
+                                    </li>
+                                {/if}
+                                <li class="login_h">
+                                    <a href="?logout"><i class="fa fa-lock"></i>[s`Log out`]</a>
+                                </li>
+                            {else}
+                                <li class="login_h">
+                                    <a href="{$wa->loginUrl()}" ><i class="fa fa-unlock"></i>[s`Log in`]</a>
+                                </li> 
+                                <li>
+                                    <a href="{$wa->signupUrl()}" ><i class="fa fa-user"></i>[s`Sign up`]</a>
+                                </li>                                                  
+                            {/if}
+                            <!-- auth links -->
                         {/if}					
                     </ul>
                     {if isset($currencies) && count($currencies) > 1}
-                    <div id="currency" class="header-button">
-                        <div>
-                            <div class="heading-1"><i class="fa fa-money"></i>Валюта<i class="fa fa-angle-down"></i></div>
-                            <div class="heading">
-                                {if $currency.code == 'RUB'}
-                                {$currency.sign_html}
-                                {else}
-                                {$currency.sign}
-                                {/if}
-                                <i class="fa fa-angle-down"></i>
+                        <div id="currency" class="header-button">
+                            <div>
+                                <div class="heading-1"><i class="fa fa-money"></i>[`Currency`]<i class="fa fa-angle-down"></i></div>
+                                <div class="heading">
+                                    {if $currency.code == 'RUB'}
+                                        {$currency.sign_html}
+                                    {else}
+                                        {$currency.sign}
+                                    {/if}
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
                             </div>
-                        </div>
 
-                        <ul class="currency">
-                            {foreach $currencies as $c_code => $c}
-                            {if $c_code=='RUB'}
-                            <li><a data-value="{$c_code}" href="#" title="{$c.title}">{$c.sign_html}</a></li>
-                            {else}
-                            <li><a data-value="{$c_code}" href="#" title="{$c.title}"><span>{$c.sign}</span></a></li>
-                            {/if}
-                            {/foreach}
-                        </ul>
-                    </div>
+                            <ul class="currency">
+                                {foreach $currencies as $c_code => $c}
+                                    {if $c_code=='RUB'}
+                                        <li>
+                                            <a data-value="{$c_code}" href="#" title="{$c.title}">{$c.sign_html}</a>
+                                        </li>
+                                    {else}
+                                        <li>
+                                            <a data-value="{$c_code}" href="#" title="{$c.title}"><span>{$c.sign}</span></a>
+                                        </li>
+                                    {/if}
+                                {/foreach}
+                            </ul>
+                        </div>
                     {/if}
 
-                    <ul>
-                        {foreach $wa->apps() as $a}
-                        <li><a {if $a.url==$wa_app_url} class="active"{/if} href="{$a.url}">{$a.name}</a></li>
-                        {/foreach}
-                    </ul>
+
                 </div>
             </div>
             <div id="page">
                 <div id="shadow">
-                    <div class="shadow"></div>
-                    <header id="header">
-                        <div class="header-top">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        {if isset($currencies) && count($currencies) > 1}
-                                        {$currency = $wa->shop->currency(true)}
-                                        <div id="currency" class="header-button">
-                                            <div>
-                                                <div class="heading-1"><i class="fa fa-money"></i>Валюта<i class="fa fa-angle-down"></i></div>
-                                                <div class="heading">
-                                                    {if $currency.code == 'RUB'}
-                                                    {$currency.sign_html}
-                                                    {else}
-                                                    {$currency.sign}
-                                                    {/if}
-                                                    <i class="fa fa-angle-down"></i>
-                                                </div>
-                                            </div>
-                                            <ul class="currency">
-                                                {foreach $currencies as $c_code => $c}
-                                                {if $c_code=='RUB'}
-                                                <li><a data-value="{$c_code}" href="#" title="{$c.title}">{$c.sign_html}</a></li>
-                                                {else}
-                                                <li><a data-value="{$c_code}" href="#" title="{$c.title}"><span>{$c.sign}</span></a></li>
-                                                {/if}
-                                                {/foreach}
-                                            </ul>
-                                        </div>
-                                        {/if}
-                                        {if $wa->shop &&  $wa->shop->settings('phone')}
-                                        <div class="phone">
-                                            <span>Тел.:</span>
-                                            {$wa->shop->settings('phone')}					
-                                        </div>
-                                        {/if}
-                                        <div class="clear"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="toprow-1">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <a class="swipe-control" href="#"><i class="fa fa-align-justify"></i></a>
-                                        {if $wa->getUrl('shop/frontend/cart')}
-                                        <div class="top-search">
-                                            <i class="fa fa-search"></i>
-                                        </div>
-                                        {/if}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div id="logo"><a href="{$wa_url}" ><img src="{$wa_theme_url}{$theme_settings.logo}"  title="{$wa->accountName()}" alt="{$wa->accountName()}" /></a></div>
+                         <div class="shadow"></div>
+                         <header id="header">
+                             <div class="header-top">
+                                 <div class="container">
+                                     <div class="row">
+                                         <div class="col-sm-12">
+                                             {if isset($currencies) && count($currencies) > 1}
+                                                 {$currency = $wa->shop->currency(true)}
+                                                 <div id="currency" class="header-button">
+                                                     <div>
+                                                         <div class="heading-1"><i class="fa fa-money"></i>[`Currency`]<i class="fa fa-angle-down"></i></div>
+                                                         <div class="heading">
+                                                             {if $currency.code == 'RUB'}
+                                                                 {$currency.sign_html}
+                                                             {else}
+                                                                 {$currency.sign}
+                                                             {/if}
+                                                             <i class="fa fa-angle-down"></i>
+                                                         </div>
+                                                     </div>
+                                                     <ul class="currency">
+                                                         {foreach $currencies as $c_code => $c}
+                                                             {if $c_code=='RUB'}
+                                                                 <li>
+                                                                     <a data-value="{$c_code}" href="#" title="{$c.title}">{$c.sign_html}</a>
+                                                                 </li>
+                                                             {else}
+                                                                 <li>
+                                                                     <a data-value="{$c_code}" href="#" title="{$c.title}"><span>{$c.sign}</span></a>
+                                                                 </li>
+                                                             {/if}
+                                                         {/foreach}
+                                                     </ul>
+                                                 </div>
+                                             {/if}
+                                             {if $wa->shop &&  $wa->shop->settings('phone')}
+                                                 <div class="phone">
+                                                     <span>[`Tel`].:</span>
+                                                     {$wa->shop->settings('phone')}					
+                                                 </div>
+                                             {elseif $theme_settings.site_phone}
+                                                 <div class="phone">
+                                                     <span>[`Tel`].:</span>
+                                                     {$theme_settings.site_phone}					
+                                                 </div>
+                                             {/if}
+                                             <div class="clear"></div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="container">
+                                 <div class="toprow-1">
+                                     <div class="row">
+                                         <div class="col-sm-12">
+                                             <a class="swipe-control" href="#"><i class="fa fa-align-justify"></i></a>
+                                                 {if $wa->getUrl('shop/frontend/cart')}
+                                                 <div class="top-search">
+                                                     <i class="fa fa-search"></i>
+                                                 </div>
+                                             {/if}
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="row">
+                                     <div class="col-sm-12">
+                                         <div id="logo">
+                                             <a href="{$wa_url}" >
+                                                 <img src="{$wa_theme_url}{$theme_settings.logo}"  title="{$wa->accountName()}" alt="{$wa->accountName()}" /></a>
+                                         </div>
+                                         {if $wa->getUrl('shop/frontend/cart')}
+                                             <!-- shopping cart info -->
+                                             {$cart = $wa->shop->cart()}
+                                             {$cart_total = $wa->shop->cart->total()}
+                                             {$cart_count = $wa->shop->cart->count()}  
+                                             {$cart_discount = $wa->shop->cart->total(false) - $wa->shop->cart->total(true)}
+                                             <div class="cart-position">
+                                                 <div class="cart-inner">
+                                                     <div id="cart" >
+                                                         <div class="heading">
+                                                             <span class="link_a"> 
+                                                                 <i class="fa fa-shopping-cart"></i>
+                                                                 <b>[`Shopping cart`]</b>
+                                                                 <span class="sc-button"></span>
+                                                                 <span id="cart-total2">{$cart_count}</span>
+                                                                 <span id="cart-total">{wa_currency_html($cart_total, $wa->shop->currency())}</span>
+                                                                 <i class="fa fa-angle-down"></i>
+                                                                 <span class="clear"></span>
+                                                             </span>
+                                                         </div>
+                                                         {$cart_items = $cart->items()}
+                                                         <div class="content">
+                                                             <div class="content-scroll">
+                                                                 <div class="mini-cart-info">
+                                                                     <table class="cart">
+                                                                         <tbody>
+                                                                             {foreach $cart_items as $item}
+                                                                                 <tr data-id="{$item.id}">
+                                                                                     <td class="image">			
+                                                                                         <a href="{$wa->shop->productUrl($item.product)}">
+                                                                                             {$wa->shop->productImgHtml($item.product, '47x47', ['itemprop' => 'image', 'alt' => $item.name])} 
+                                                                                         </a>
+                                                                                     </td>
+                                                                                     <td class="name">
+                                                                                         <a href="{$wa->shop->productUrl($item.product)}">{$item.name|escape}</a><br>
+                                                                                         <span class="quantity">x&nbsp;<span>{$item.quantity}</span></span>
+                                                                                         <span class="total">{wa_currency_html($item.price,$wa->shop->currency())}</span>
+                                                                                         <div class="remove"><span><i class="fa fa-times-circle"></i>[`Remove`]</span></div>
+                                                                                     </td>
+                                                                                 </tr>
+                                                                             {/foreach}
+                                                                         </tbody>
+                                                                     </table>
+                                                                 </div>
+                                                                 <div>
+                                                                     <table class="total">
+                                                                         <tbody>
+                                                                             <tr>
+                                                                                 <td align="right" class="total-right"><b>[`Discount`]:</b></td>
+                                                                                 <td align="left" class="total-left"><span class="t-price shopping_cart_discount">{wa_currency_html($cart_discount, $wa->shop->currency())}</span></td>
+                                                                             </tr>
+                                                                             <tr>
+                                                                                 <td align="right" class="total-right"><b>[`Total`]:</b></td>
+                                                                                 <td align="left" class="total-left"><span class="t-price shopping_cart_total">{wa_currency_html($cart_total, $wa->shop->currency())}</span></td>
+                                                                             </tr>
+                                                                         </tbody>
+                                                                     </table>
+                                                                 </div>
+                                                                 <div class="checkout">
+                                                                     <a href="{$wa->getUrl('shop/frontend/cart')}" class="button"><span>[`Shopping cart`]</span></a> 
+                                                                     <a href="{$wa->getUrl('shop/frontend/checkout')}" class="button"><span>[`Checkout`]</span></a>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         {/if}
 
-                                    {if $wa->getUrl('shop/frontend/cart')}
-                                    <!-- shopping cart info -->
-                                    {$cart_total = $wa->shop->cart->total()}
-                                    {$cart_count = $wa->shop->cart->count()}                                   
-                                    <div class="cart-position">
-                                        <div class="cart-inner">
-                                            <div id="cart" >
+                                         {if $wa->isAuthEnabled()}
+                                             <ul id="welcome">
 
-                                                <div class="heading">
-                                                    <span class="link_a"> 
-                                                        <i class="fa fa-shopping-cart"></i>
-                                                        <b>[s`Shopping cart`]</b>
-                                                        <span class="sc-button"></span>
-                                                        <span id="cart-total2">{$cart_count}</span>
-                                                        <span id="cart-total">{wa_currency_html($cart_total, $wa->shop->currency())}</span>
-                                                        <i class="fa fa-angle-down"></i>
-                                                        <span class="clear"></span>
-                                                    </span>
-                                                </div>
+                                                 <!-- auth links -->
+                                                 {if $wa->user()->isAuth()}
+                                                     <li class="login_h"><a href="?logout"><i class="fa fa-lock"></i>[s`Log out`]</a></li>
+                                                         {if $wa->shop}
+                                                         <li class="login_h"><a href="{$wa->getUrl('shop/frontend/my')}"><i class="fa fa-user"></i>[s`My account`]</a></li> 
+                                                         {else}
+                                                         <li><strong>{$wa->user('name')}</strong></li>
+                                                             {/if}
+                                                         {else}
+                                                     <li class="login_h"><a href="{$wa->loginUrl()}" ><i class="fa fa-lock"></i>[s`Log in`]</a></li> 
+                                                     <li><a href="{$wa->signupUrl()}" ><i class="fa fa-user"></i>[s`Sign up`]</a></li>                                                  
+                                                     {/if}
 
-                                                <div class="content">
-                                                    <div class="content-scroll">
-                                                        <div>
-                                                            <table class="total">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td align="right" class="total-right"><b>Итого:</b></td>
-                                                                        <td align="left" class="total-left"><span  id="cart-total-price" class="t-price">{wa_currency_html($cart_total, $wa->shop->currency())}</span></td>
-                                                                    </tr>
-                                                                </tbody></table>
-                                                        </div>
-                                                        <div class="checkout">
-                                                            <a href="{$wa->getUrl('shop/frontend/cart')}" class="button"><span>[s`Shopping cart`]</span></a> 
-                                                            <a href="{$wa->getUrl('shop/frontend/checkout')}" class="button"><span>Оформить заказ</span></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/if}
+                                             </ul>
+                                         {/if}	
+                                         {if $wa->getUrl('shop/frontend/search')}  
+                                             <!-- product search form  -->
+                                             <div id="search">
+                                                 <form method="get" action="{$wa->getUrl('shop/frontend/search')}">
+                                                     <div class="inner">
+                                                         <div class="button-search"><i class="fa fa-search"></i></div>
+                                                         <input id="search_query_top" type="search" name="query" {if !empty($query)}value="{$query}"{/if} placeholder="[s`Find products`]">
+                                                     </div>
+                                                 </form>
+                                             </div>
+                                         {/if}
+                                         <div class="clear"></div>
+                                     </div>
+                                 </div>
+                                 <div class="row">
+                                     <div class="col-sm-9 pull-right">
+                                         <div class="toprow  ">
+                                             <ul class="links">
+                                                 {foreach $wa->apps() as $a}
+                                                     <li><a {if $a.url==$wa_app_url} class="active"{/if} href="{$a.url}">{$a.name}</a></li>
+                                                     {/foreach}
+                                             </ul>
+                                             <div class="clear"></div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div id="menu-gadget">
+                                     {include file="`$wa_active_theme_path`/menu-gadget.html" inline}
+                                 </div>
+                             </div>
+                         </header>
+                         <section>
 
-                                    {if $wa->isAuthEnabled()}
-                                    <ul id="welcome">
+                             <div id="container">
+                                 {if $theme_settings.scroll_up}
+                                     <p id="back-top">
+                                         <a href="#top"><span></span></a>
+                                     </p>
+                                 {/if}
 
-                                        <!-- auth links -->
-                                        {if $wa->user()->isAuth()}
-                                        <li class="login_h"><a href="?logout"><i class="fa fa-lock"></i>[s`Log out`]</a></li>
-                                        {if $wa->shop}
-                                        <li class="login_h"><a href="{$wa->getUrl('shop/frontend/my')}"><i class="fa fa-user"></i>[s`My account`]</a></li> 
-                                        {else}
-                                        <li><strong>{$wa->user('name')}</strong></li>
-                                        {/if}
-                                        {else}
-                                        <li class="login_h"><a href="{$wa->loginUrl()}" ><i class="fa fa-lock"></i>[s`Log in`]</a></li> 
-                                        <li><a href="{$wa->signupUrl()}" ><i class="fa fa-user"></i>[s`Sign up`]</a></li>                                                  
-                                        {/if}
+                                 <div class="container">
+                                     <div id="notification"></div>
+                                     <div class="row">
+                                         <aside class="col-sm-3" id="column-left">
+                                             {include file="`$wa_active_theme_path`/sidebar.html" inline}
+                                         </aside>
+                                         <div class="col-sm-9  " id="content">
+                                             <div id="inner_content">
+                                                 {include file="`$wa_active_theme_path`/content.html" inline}
+                                                 <div class="clear"></div>
+                                             </div>
+                                         </div>
+                                         <div class="clear"></div>
 
-                                    </ul>
-                                    {/if}	
-                                    {if $wa->getUrl('shop/frontend/search')}  
-                                    <!-- product search form  -->
-                                    <div id="search">
-                                        <form method="get" action="{$wa->getUrl('shop/frontend/search')}">
-                                            <div class="inner">
-                                                <div class="button-search"><i class="fa fa-search"></i></div>
-                                                <input type="search" name="query" {if !empty($query)}value="{$query}"{/if} placeholder="[s`Find products`]">
-                                            </div>
-                                        </form>
-                                    </div>
-                                    {/if}
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-9 pull-right">
-                                    <div class="toprow  ">
-                                        <ul class="links">
-                                            {foreach $wa->apps() as $a}
-                                            <li><a {if $a.url==$wa_app_url} class="active"{/if} href="{$a.url}">{$a.name}</a></li>
-                                            {/foreach}
-                                        </ul>
-                                        <div class="clear"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="menu-gadget">
-                                {include file="`$wa_active_theme_path`/menu-gadget.html" inline}
-                            </div>
-                        </div>
-                    </header>
-                    <section>
+                                         <div class="content_bottom">
+                                             <div id="banner1" class="banner row">
 
-                        <div id="container">
-                            <p id="back-top"> <a href="#top"><span></span></a> </p>
-                            <div class="container">
-                                <div id="notification"></div>
-                                <div class="row">
-                                    <aside class="col-sm-3" id="column-left">
-                                        {include file="`$wa_active_theme_path`/sidebar.html" inline}
-                                    </aside>
-                                    <div class="col-sm-9  " id="content">
-                                        <div id="inner_content">
-                                            {include file="`$wa_active_theme_path`/content.html" inline}
-                                            <div class="clear"></div>
-                                        </div>
-                                    </div>
-                                    <div class="clear"></div>
+                                             </div>
+                                             <div class="clear"></div>
+                                         </div>
 
-                                    <div class="content_bottom">
-                                        <div id="banner1" class="banner row">
+                                         <div class="clear"></div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="clear"></div>
+                         </section>
+                         <footer>
+                             {include file="footer.html" inline}
+                         </footer>
 
-                                        </div>
-                                        <div class="clear"></div>
-                                    </div>
-
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                    </section>
-                    <footer>
-                        {include file="footer.html" inline}
-                    </footer>
-
+                     </div>
                 </div>
             </div>
-        </div>
 
-    </body>
-</html>
+        </body>
+    </html>
