@@ -1,86 +1,86 @@
 {if isset($category)}{$selected_category=$category.id}{else}{$selected_category=null}{/if}
 
 {if $wa->shop && $wa->shop->categories(0, null, true)}
-    <div class="box category">
-        <div class="box-heading">Категории</div>
-        <div class="box-content">
-            <div class="box-category">
-                {wa_print_tree tree=$wa->shop->categories(0, null, true) selected=$selected_category unfolded=true collapsible_class='parent' class="category-tree" elem ='<a href=":url" title=":name">:name</a>'}
-            </div>
+<div class="box category">
+    <div class="box-heading">[`Catalog`]</div>
+    <div class="box-content">
+        <div class="box-category">
+            {wa_print_tree tree=$wa->shop->categories(0, null, true) selected=$selected_category unfolded=true collapsible_class='parent' class="category-tree" elem ='<a href=":url" title=":name">:name</a>'}
         </div>
     </div>
-    <div class="clear"></div>
+</div>
+<div class="clear"></div>
 {/if}
 
 {if $wa->site->pages()}
-    <div class="box category">
-        <div class="box-heading">Информация</div>
-        <div class="box-content">
-    {if isset($category)}{$selected_category=$category.id}{else}{$selected_category=null}{/if}
-    <div class="box-category">
-        <!-- page tree -->
-        {wa_print_tree tree=$wa->site->pages() attrs = 'id="page-list"' elem ='<a href=":url">:name</a>' collapsible_class='parent' selected=$page.id|default:0 unfolded=true}
+<div class="box category">
+    <div class="box-heading">[`Information`]</div>
+    <div class="box-content">
+        {if isset($category)}{$selected_category=$category.id}{else}{$selected_category=null}{/if}
+        <div class="box-category">
+            <!-- page tree -->
+            {wa_print_tree tree=$wa->site->pages() attrs = 'id="page-list"' elem ='<a href=":url">:name</a>' collapsible_class='parent' selected=$page.id|default:0 unfolded=true}
 
+        </div>
     </div>
-</div>
 </div>
 {/if}
 
 
 {if $wa->blog && $wa->blog->posts()}
-    <div class="box man">
-        <div class="box-heading"><span>Новости</span></div>
-        <div class="box-content">
-            {foreach $wa->blog->posts() as $post}
-                <div class="short-post">
-                    <h3>
-                        <a href="{$post.link}">{$post.title}</a>
-                        {* @event prepare_posts_frontend.%plugin_id%.post_title *}
-                        {if !empty($post.plugins.post_title)}
-                        {foreach $post.plugins.post_title as $plugin => $output}{$output}{/foreach}
-                    {/if}
-                </h3>
-                <div class="credentials">
-                    {if $post.user.posts_link}
-                        <a href="{$post.user.posts_link}" class="username">{$post.user.name}</a>
-                    {else}
-                        <span class="username">{$post.user.name}</span>
-                    {/if}
-                    {$post.datetime|wa_datetime:"humandate"}
-                </div>
-                <p>
-                    {$post.text|strip_tags|truncate:400}
-                </p>
+<div class="box man">
+    <div class="box-heading"><span>[`News`]</span></div>
+    <div class="box-content">
+        {foreach $wa->blog->posts() as $post}
+        <div class="short-post">
+            <h3>
+                <a href="{$post.link}">{$post.title}</a>
+                {* @event prepare_posts_frontend.%plugin_id%.post_title *}
+                {if !empty($post.plugins.post_title)}
+                {foreach $post.plugins.post_title as $plugin => $output}{$output}{/foreach}
+                {/if}
+            </h3>
+            <div class="credentials">
+                {if $post.user.posts_link}
+                <a href="{$post.user.posts_link}" class="username">{$post.user.name}</a>
+                {else}
+                <span class="username">{$post.user.name}</span>
+                {/if}
+                {$post.datetime|wa_datetime:"humandate"}
             </div>
+            <p>
+                {$post.text|strip_tags|truncate:400}
+            </p>
+        </div>
         {if $post@iteration == 3}{break}{/if}
-    {/foreach}
-    <div class="clear"></div>
-</div>
+        {/foreach}
+        <div class="clear"></div>
+    </div>
 </div>
 {/if}
 
 {if $wa->photos && $wa->photos->photos()}
-    <div class="box man" id="last_photos">
-        <div class="box-heading"><span>Последние фото</span></div>
-        <div class="box-content">
-            <ul class="view-thumbs">
-                {foreach from=$wa->photos->photos() item=photo}
-                    <li{if $photo.stack_count > 0} class="stacked"{/if}>
-                        <div class="image">
-                            {if empty($photo.frontend_link)}
-                                {$wa->photos->getImgHtml($photo, "200x0", ["class"=>"shadowed"])}
-                            {else}
-                                <a href="{$photo.frontend_link|default:'#'}">
-                                    {$wa->photos->getImgHtml($photo, "200x0", ["class"=>"shadowed"])}
-                                </a>
-                            {/if}
-                        </div>
-                        <h5>{$photo.name}</h5>
-                        {if $photo.description}
-                            <p>{$photo.description}</p>
-                        {/if}
-                    </li>
-                {if $photo@iteration == 3}{break}{/if}
+<div class="box man" id="last_photos">
+    <div class="box-heading"><span>[`Photos`]</span></div>
+    <div class="box-content">
+        <ul class="view-thumbs">
+            {foreach from=$wa->photos->photos() item=photo}
+            <li{if $photo.stack_count > 0} class="stacked"{/if}>
+                <div class="image">
+                    {if empty($photo.frontend_link)}
+                    {$wa->photos->getImgHtml($photo, "200x0", ["class"=>"shadowed"])}
+                    {else}
+                    <a href="{$photo.frontend_link|default:'#'}">
+                        {$wa->photos->getImgHtml($photo, "200x0", ["class"=>"shadowed"])}
+                    </a>
+                    {/if}
+                </div>
+                <h5>{$photo.name}</h5>
+                {if $photo.description}
+                <p>{$photo.description}</p>
+                {/if}
+            </li>
+            {if $photo@iteration == 3}{break}{/if}
             {/foreach}
         </ul>
         <div class="clear"></div>
@@ -91,15 +91,15 @@
 
 <!-- tag cloud -->
 {if $wa->shop && $wa->shop->tags()}
-    <div class="box man">
-        <div class="box-heading"><span>Теги</span></div>
-        <div class="box-content">
-            <div class="tags">
-                {foreach $wa->shop->tags() as $tag}
-                    <a href="{$wa_app_url}tag/{$tag.uri_name}/" style="font-size: {$tag.size}%; opacity: {$tag.opacity}">{$tag.name|escape}</a>
-                {/foreach}
-            </div>
-            <div class="clear"></div>
+<div class="box man">
+    <div class="box-heading"><span>[`Tags`]</span></div>
+    <div class="box-content">
+        <div class="tags">
+            {foreach $wa->shop->tags() as $tag}
+            <a href="{$wa->getUrl('shop/frontend/tag',['tag' => $tag.uri_name])}" style="font-size: {$tag.size}%; opacity: {$tag.opacity}">{$tag.name|escape}</a>
+            {/foreach}
         </div>
+        <div class="clear"></div>
     </div>
+</div>
 {/if}

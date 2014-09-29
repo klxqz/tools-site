@@ -251,8 +251,8 @@ h3 {
 /***********************/
 @font-face {
     font-family: 'FontAwesome';
-    src: url('fontawesome-webfont.eot-v=4.0.3');
-    src: url('fontawesome-webfont.eot-#iefix&v=4.0.3') format('embedded-opentype'), url('fontawesome-webfont.woff-v=4.0.3') format('woff'), url('fontawesome-webfont.ttf-v=4.0.3') format('truetype'), url('fontawesome-webfont.svg-v=4.0.3#fontawesomeregular') format('svg');
+    src: url('./fonts/fontawesome-webfont.eot');
+    src: url('./fonts/fontawesome-webfont.eot') format('embedded-opentype'), url('./fonts/fontawesome-webfont.woff') format('woff'), url('./fonts/fontawesome-webfont.ttf') format('truetype'), url('./fonts/fontawesome-webfont.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -1105,27 +1105,26 @@ header .col-sm-12 {position:relative;}
 }
 
 /*********************************************************************leftinfo***************************************************************************************************/
-aside .info li {
+aside .info li,
+aside .brands li{
     position: relative;
     clear:both;
     padding:7px 20px;
     border-top:1px dotted #c5c5c5;
 }
-/*aside .info li a:hover i, .afine li a:hover i, .acount li a:hover i {
-        color:#7e7e7e
-        }*/
+
 aside .info li a i, .afine li a i, .acount li a i {
     font-size:17px;
     margin-right:10px;
 }
 
-aside .info li a, .afine li a, .acount li a {
+aside .info li a, aside .brands li a, .afine li a, .acount li a {
     line-height:20px;
     font-size:14px;
     font-size:14px;
     color:#777777;
 }
-aside .info li:first-child, aside.info li:first-child, .afine li:first-child, .acount li:first-child {border-top:0;}
+aside .info li:first-child,aside .brands li:first-child, aside.info li:first-child, .afine li:first-child, .acount li:first-child {border-top:0;}
 aside.info li, .afine li, .acount li {
     padding:7px 20px;
     border-top:1px dotted #c5c5c5;

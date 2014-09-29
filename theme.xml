@@ -303,11 +303,46 @@
             <name locale="ru_RU">Ссылка на ВКонтакте</name>
         </setting>
         
+        <setting var="footer_banner" control_type="text">
+            <value>&lt;i class=&quot;fa fa-truck&quot;&gt;&lt;/i&gt;Бесплатная доставка от 5 000 руб.</value>
+            <name locale="en_US">Footer banner</name>
+            <name locale="ru_RU">Баннер в подвале</name>
+        </setting>
+  
         <setting var="source_main_menu" control_type="select">
-            <value>shop_categories</value>
+            <value>apps</value>
             <name locale="en_US">Source for the main top menu</name>
             <name locale="ru_RU">Источник для главного верхнего меню</name>
             <options>
+                <option value="apps">
+                    <name locale="en_US">Applications</name>
+                    <name locale="ru_RU">Приложения</name>
+                </option>
+                <option value="site_pages">
+                    <name locale="en_US">Application «Site» - pages</name>
+                    <name locale="ru_RU">Приложение «Сайт» - страницы</name>
+                </option>
+                <option value="shop_pages">
+                    <name locale="en_US">Application «Shop» - pages</name>
+                    <name locale="ru_RU">Приложение «Магазин» - страницы</name>
+                </option>
+                <option value="shop_categories">
+                    <name locale="en_US">Application «Shop» - categories</name>
+                    <name locale="ru_RU">Приложение «Магазин» - категории</name>
+                </option>
+            </options>
+        </setting>
+        
+        
+        <setting var="source_main_menu_mobile" control_type="select">
+            <value>shop_categories</value>
+            <name locale="en_US">Source for the main top menu(Mobile version)</name>
+            <name locale="ru_RU">Источник для главного верхнего меню(Мобильная версия)</name>
+            <options>
+                <option value="apps">
+                    <name locale="en_US">Applications</name>
+                    <name locale="ru_RU">Приложения</name>
+                </option>
                 <option value="site_pages">
                     <name locale="en_US">Application «Site» - pages</name>
                     <name locale="ru_RU">Приложение «Сайт» - страницы</name>
@@ -393,6 +428,18 @@
         <locale>
             <msgid>Information</msgid>
             <msgstr locale="ru_RU">Информация</msgstr>
+        </locale>
+        <locale>
+            <msgid>News</msgid>
+            <msgstr locale="ru_RU">Новости</msgstr>
+        </locale>
+        <locale>
+            <msgid>Photos</msgid>
+            <msgstr locale="ru_RU">Фото</msgstr>
+        </locale>
+        <locale>
+            <msgid>Tags</msgid>
+            <msgstr locale="ru_RU">Теги</msgstr>
         </locale>
         <locale>
             <msgid>Site links</msgid>

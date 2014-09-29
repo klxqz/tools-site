@@ -1,37 +1,44 @@
-{if $theme_settings.source_main_menu == 'shop_categories' && $wa->shop}
-    <div class="row">
-        <div class="col-sm-12">
-            <div id="menu-icon">[`Catalog`]</div>
-            {if isset($category)}
-                {$selected_category=$category.id}
-            {else}
-                {$selected_category=null}
-            {/if}
-            {wa_print_tree tree=$wa->shop->categories(0, null, true) selected=$selected_category unfolded=true collapsible_class='parent' class="sf-menu-phone" elem ='<a href=":url" title=":name">:name</a>'}
-        </div>
+{if $theme_settings.source_main_menu_mobile == 'shop_categories' && $wa->shop}
+<div class="row">
+    <div class="col-sm-12">
+        <div id="menu-icon">[`Catalog`]</div>
+        {if isset($category)}
+        {$selected_category=$category.id}
+        {else}
+        {$selected_category=null}
+        {/if}
+        {wa_print_tree tree=$wa->shop->categories(0, null, true) selected=$selected_category unfolded=true collapsible_class='parent' class="sf-menu-phone" elem ='<a href=":url" title=":name">:name</a>'}
     </div>
-{elseif $theme_settings.source_main_menu == 'shop_pages' && $wa->shop}
-    <div class="row">
-        <div class="col-sm-12">
-            <div id="menu-icon">[`Information`]</div>
-            {if isset($page.id)}
-                {$selected_page=$page.id}
-            {else}
-                {$selected_page=null}
-            {/if}
-            {wa_print_tree tree=$wa->shop->pages() class="sf-menu-phone" attrs = 'id="page-list"' elem ='<a href=":url">:name</a>' collapsible_class='parent' selected=$selected_page unfolded=true}
-        </div>
+</div>
+{elseif $theme_settings.source_main_menu_mobile == 'shop_pages' && $wa->shop}
+<div class="row">
+    <div class="col-sm-12">
+        <div id="menu-icon">[`Information`]</div>
+        {if isset($page.id)}
+        {$selected_page=$page.id}
+        {else}
+        {$selected_page=null}
+        {/if}
+        {wa_print_tree tree=$wa->shop->pages() class="sf-menu-phone" attrs = 'id="page-list"' elem ='<a href=":url">:name</a>' collapsible_class='parent' selected=$selected_page unfolded=true}
     </div>
+</div>
+{elseif $theme_settings.source_main_menu_mobile == 'site_pages'}
+<div class="row">
+    <div class="col-sm-12">
+        <div id="menu-icon">[`Information`]</div>
+        {if isset($page.id)}
+        {$selected_page=$page.id}
+        {else}
+        {$selected_page=null}
+        {/if}
+        {wa_print_tree tree=$wa->site->pages() class="sf-menu-phone" attrs = 'id="page-list"' elem ='<a href=":url">:name</a>' collapsible_class='parent' selected=$selected_page unfolded=true}
+    </div>
+</div>
 {else}
-    <div class="row">
-        <div class="col-sm-12">
-            <div id="menu-icon">[`Information`]</div>
-            {if isset($page.id)}
-                {$selected_page=$page.id}
-            {else}
-                {$selected_page=null}
-            {/if}
-            {wa_print_tree tree=$wa->site->pages() class="sf-menu-phone" attrs = 'id="page-list"' elem ='<a href=":url">:name</a>' collapsible_class='parent' selected=$selected_page unfolded=true}
-        </div>
-    </div>
+<div id="menu-icon">[`Site links`]</div>
+<ul id="page-list" class="sf-menu-phone">
+    {foreach $wa->apps() as $a}
+    <li{if $a.url==$wa_app_url} class="selected"{/if}><a  href="{$a.url}">{$a.name}</a></li>
+    {/foreach}
+</ul>
 {/if}
