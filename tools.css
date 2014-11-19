@@ -835,13 +835,20 @@ header #cart .empty {
     margin-bottom:19px;
 }
 .phone {
+    float: left;
     font-size:23px;
     color:#ffffff;
     line-height:40px;
+    margin-right: 10px;
 }
 .phone span {
     font-size:16px;
     color:#777777;
+}
+.workhours{
+    float: left;
+    line-height: 40px;
+    font-size: 16px;
 }
 #welcome {
     float:right;
@@ -1098,10 +1105,18 @@ header .col-sm-12 {position:relative;}
 .wishlist, .compare  {display:inline-block;}
 .wishlist a:hover, .compare a:hover {color:#1c1c1c}
 .wishlist a, .compare a{
-    display:block;
+    display:inline-block;
     font-size:12px;
     color:#a0a0a0;
     font-weight:500;
+}
+.wishlist a i, .compare a i{
+    font-size:20px;
+    margin-right: 5px;
+}
+
+.wishlist a.checked, .compare a.checked{
+    color:#000;
 }
 
 /*********************************************************************leftinfo***************************************************************************************************/
@@ -1600,6 +1615,8 @@ aside .box .box-content .box-product ul li .padding .inner {
 /*************************************/
 .box-filter li {
     line-height:25px;
+    padding: 3px 0px;
+    font-size: 14px;
 }
 .box-filter label {
     cursor:pointer;
@@ -2566,7 +2583,6 @@ input#sub_category {
     border-top:4px solid #ffe402;
     font-weight:bold;
     padding:15px 100px 15px 15px;
-    margin-top:10px;
 }
 
 .checkout-content {
@@ -3008,8 +3024,7 @@ table.radio tbody td {width:100%}
 /* footer */
 .common-home footer {margin-top:0;}
 footer {
-
-    padding-top:36px;
+    padding-bottom: 20px;
     clear: both;
     overflow: hidden;
     background-color:#1c1c1c;
@@ -3494,7 +3509,7 @@ ul.menu-h li.selected ul * { background: #fff !important; }
 .wa-auth-adapters ul li a img { position: relative; top: 3px; left: -3px; }
 .wa-auth-adapters p { clear: left; color: #888; font-size: 0.9em; width: 40%; }
 
-.wa-form { float: left; margin: 10px 0; overflow: visible; }
+.wa-form { margin: 10px 0; overflow: visible; }
 .wa-form .wa-field { clear: left; margin: 0; padding-top: 3px; }
 .wa-form .wa-field .wa-name { float: left; width: 155px; padding-top: 0.05em; padding-bottom: 10px; font-size: 0.95em; }
 .wa-form .wa-field.wa-separator { height: 10px; }
@@ -3572,4 +3587,38 @@ i.icon10 { background-repeat:no-repeat; height:10px; width:10px; display:inline-
 
 .related-slider li .image img{
     margin: 0 auto;    
+}
+
+#panel{
+    background: #252525;
+    bottom: 0;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+#panel .col-sm-3{
+    float: left;   
+    width: 25%;
+}
+
+@media (max-width: 717px) {
+    #panel .col-sm-3 .text{
+        display: none;
+    }
+    #panel a{
+        font-size: 20px;
+    }
+}
+
+#panel a {
+    display: inline-block;
+    padding: 12px 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.dialog-window .wishlist, .dialog-window .compare {
+    display:block;
 }

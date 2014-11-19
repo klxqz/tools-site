@@ -51,7 +51,9 @@
                 {/if}
                 {if $wa->getUrl('shop/frontend/my/myOrders')}<li><a href="{$wa->getUrl('shop/frontend/myOrders')}" >[`My orders`]</a></li>{/if}  
                 {if $wa->getUrl('shop/frontend/cart')}<li><a href="{$wa->getUrl('shop/frontend/cart')}" >[`Shopping cart`]</a></li>{/if}
-                {if $wa->getUrl('shop/frontend/checkout')}<li><a href="{$wa->getUrl('shop/frontend/checkout')}" >[`Checkout`]</a></li>{/if}   
+                {if $wa->getUrl('shop/frontend/checkout')}<li><a href="{$wa->getUrl('shop/frontend/checkout')}" >[`Checkout`]</a></li>{/if} 
+                {if $wa->getUrl('shop/frontend/search')}<li><a href="{$wa->getUrl('/frontend/search')}?list=wishlist" >[`Wish List`]</a></li>{/if} 
+
             </ul>
         </div>
         <div class="col-sm-3">
@@ -65,6 +67,17 @@
                     <div>
                         [`Tel`].:						
                         <div>{$theme_settings.site_phone}</div>
+                    </div>
+                {/if}
+                {if $wa->shop && $wa->shop->settings('email')}
+                    <div>
+                        [`Email`].:						
+                        <div>{$wa->shop->settings('email')}</div>
+                    </div>
+                {elseif $theme_settings.site_email}
+                    <div>
+                        [`Email`].:						
+                        <div>{$theme_settings.site_email}</div>
                     </div>
                 {/if}
                 <ul>
@@ -103,18 +116,21 @@
 
 </div>
 
+{if !empty($frontend_footer)}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- plugin hook: 'frontend_footer' -->
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <!-- plugin hook: 'frontend_footer' -->
-            {if isset($frontend_footer)}
                 {* @event frontend_footer.%plugin_id% *}
-            {foreach $frontend_footer as $_}{$_}{/foreach}
-        {/if}
+                {foreach $frontend_footer as $_}
+                    {$_}
+                {/foreach}
+
+            </div>
+        </div>
     </div>
-</div>
-</div>
+{/if}
 
 <div class="container">
     <div class="row">

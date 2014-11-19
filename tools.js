@@ -340,6 +340,7 @@ $(document).ready(function() {
                 cart_total.find('.shopping_cart_total').html(response.data.total);
                 cart_total.find('.shopping_cart_discount').html(response.data.discount);
                 cart_total.find('#cart-total2').html(response.data.count);
+                $('#panel .cart .count').html(response.data.count);
             }
         }, 'json');
         return false;

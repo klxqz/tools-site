@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd">
-<theme id="tools" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.1.0">
+<theme id="tools" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="2.0.0">
     <name locale="en_US">Tools</name>
     <name locale="ru_RU">Tools</name>
     <description locale="ru_RU">Семейство адаптивных тем дизайна.</description>
@@ -116,6 +116,14 @@
         <file path="theme-worange.css" custom="0">
             <description locale="en_US">Color scheme "White and Orange"</description>
             <description locale="ru_RU">Цветовая схема "Бело-Оранжевый"</description>
+        </file>
+        <file path="widget.vk.html">
+            <description locale="en_US">vk widget</description>
+            <description locale="ru_RU">Виджет ВКонтакте</description>
+        </file>
+        <file path="widget.facebook.html">
+            <description locale="en_US">facebook widget</description>
+            <description locale="ru_RU">Виджет Facebook</description>
         </file>
     </files>
     <settings>
@@ -252,12 +260,40 @@
             </options>
         </setting>
         
+        <setting var="transparent_header" control_type="checkbox">
+            <value>0</value>
+            <name locale="en_US">transparent header</name>
+            <name locale="ru_RU">Бесцветная, прозрачная "шапка"</name>
+        </setting>
+        
         <setting var="bg_image" control_type="image_select">
             <value>img/bg/no_bg.png</value>
             <name locale="en_US">Background</name>
             <name locale="ru_RU">Фон</name>
             <options>
-                <option value="img/bg/no_bg.png"></option>                
+                <option value="img/bg/no_bg.png"></option>
+                <option value="img/bg/water.jpg"></option>
+                <option value="img/bg/lava3.jpg"></option>
+                <option value="img/bg/lava2.jpg"></option>
+                <option value="img/bg/lava.jpg"></option>
+                <option value="img/bg/stars2.jpg"></option>
+                <option value="img/bg/stars.jpg"></option>
+                <option value="img/bg/gravel4.jpg"></option>
+                <option value="img/bg/gravel3.jpg"></option>
+                <option value="img/bg/gravel2.jpg"></option>
+                <option value="img/bg/gravel.jpg"></option>
+                <option value="img/bg/rose.jpg"></option>
+                <option value="img/bg/graffiti2.jpg"></option>
+                <option value="img/bg/graffiti.jpg"></option>
+                <option value="img/bg/protector.jpg"></option>
+                <option value="img/bg/parket.jpg"></option>
+                <option value="img/bg/wood.jpg"></option>
+                <option value="img/bg/carbon2.jpg"></option>
+                <option value="img/bg/carbon.jpg"></option>
+                <option value="img/bg/bg-style2.gif"></option>
+                <option value="img/bg/bg-style3.jpg"></option>
+                <option value="img/bg/bg-style4.jpg"></option>
+                <option value="img/bg/bg-style5.jpg"></option>
                 <option value="img/bg/cloth.jpg"></option>
                 <option value="img/bg/grey.jpg"></option>
                 <option value="img/bg/red.jpg"></option>
@@ -267,6 +303,19 @@
                 <option value="img/bg/yellow.jpg"></option>
             </options>
         </setting>
+        
+        <setting var="bg_custom" control_type="image">
+            <value></value>
+            <filename>img/bg/*</filename>
+            <name locale="en_US">custom background</name>
+            <name locale="ru_RU">Пользовательский фон</name>
+        </setting>
+        <setting var="fixed_bg_custom" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">fixed custom background</name>
+            <name locale="ru_RU">Фиксировать пользовательский фон</name>
+        </setting>
+        
         <setting var="basic_title" control_type="text">
             <value></value>
             <name locale="en_US">
@@ -286,6 +335,11 @@
             <value>8 (999) 999 99 99</value>
             <name locale="en_US">Phone</name>
             <name locale="ru_RU">Телефон</name>
+        </setting>
+        <setting var="site_workhours" control_type="text">
+            <value>Пн—Пт: 9:00—18:00</value>
+            <name locale="en_US">Workhours</name>
+            <name locale="ru_RU">Время работы</name>
         </setting>
         <setting var="footer_facebook" control_type="text">
             <value>https://www.facebook.com/</value>
@@ -386,6 +440,160 @@
             <name locale="ru_RU">Прокрутка вверху</name>
         </setting>
         
+        <setting var="addon_panel" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Addon panel</name>
+            <name locale="ru_RU">Дополнительная панель внизу экрана</name>
+        </setting>
+        
+        
+        <setting var="vk_widget_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">VK widget</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Виджет Вконтакте.</p>	
+                ]]>
+            </name>
+        </setting>
+        
+        <setting var="vk_widget" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">VK widget</name>
+            <name locale="ru_RU">Виджет ВКонтакте</name>
+        </setting>
+        <setting var="vk_id" control_type="text">
+            <value>62260728</value>
+            <name locale="en_US">VK group id</name>
+            <name locale="ru_RU">Идентификатор группы ВКонтакте</name>
+        </setting>
+        <setting var="vk_width" control_type="text">
+            <value>250</value>
+            <name locale="en_US">width</name>
+            <name locale="ru_RU">Ширина</name>
+        </setting>
+        <setting var="vk_height" control_type="text">
+            <value>280</value>
+            <name locale="en_US">height</name>
+            <name locale="ru_RU">Высота</name>
+        </setting>
+        
+        <setting var="vk_mode" control_type="select">
+            <value>0</value>
+            <name locale="en_US">view</name>
+            <name locale="ru_RU">Вид</name>
+            <options>
+                <option value="0">
+                    <name locale="en_US">participants</name>
+                    <name locale="ru_RU">Участники</name>
+                </option>
+                <option value="1">
+                    <name locale="en_US">title only</name>
+                    <name locale="ru_RU">Только название</name>
+                </option>
+                <option value="2">
+                    <name locale="en_US">News</name>
+                    <name locale="ru_RU">Новости</name>
+                </option>
+            </options>
+        </setting>
+        <setting var="vk_color1" control_type="color">
+            <value>#FFFFFF</value>
+            <name locale="en_US">background Color</name>
+            <name locale="ru_RU">Цвет фона</name>
+        </setting>
+        <setting var="vk_color2" control_type="color">
+            <value>#2B587A</value>
+            <name locale="en_US">text Color</name>
+            <name locale="ru_RU">Цвет текста</name>
+        </setting>
+        <setting var="vk_color3" control_type="color">
+            <value>#5B7FA6</value>
+            <name locale="en_US">color buttons</name>
+            <name locale="ru_RU">Цвет кнопок</name>
+        </setting>
+        
+        
+        
+        <setting var="facebook_widget_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Facebook widget</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Виджет Facebook.</p>	
+                ]]>
+            </name>
+        </setting>
+        
+        <setting var="facebook_widget" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Facebook widget</name>
+            <name locale="ru_RU">Виджет Facebook</name>
+        </setting>
+        <setting var="facebook_href" control_type="text">
+            <value>https://www.facebook.com/FacebookDevelopers</value>
+            <name locale="ru_RU">URL страницы/группы Facebook(абсолютный)</name>
+            <name locale="en_US">URL of the page/ Facebook  group (absolute)</name>
+        </setting>
+        
+        <setting var="facebook_width" control_type="text">
+            <value>250</value>
+            <name locale="ru_RU">Ширина блока в пикселах</name>
+            <name locale="en_US">Block width in pixels</name>
+        </setting>
+        <setting var="facebook_height" control_type="text">
+            <value></value>
+            <name locale="ru_RU">Высота блока в пикселах</name>
+            <name locale="en_US">Block height in pixels</name>
+        </setting>
+        <setting var="facebook_colorscheme" control_type="select">
+            <value>light</value>
+            <name locale="en_US">The color scheme</name>
+            <name locale="ru_RU">Цветовая схема</name>
+            <options>
+                <option value="light">
+                    <name locale="en_US">light</name>
+                    <name locale="ru_RU">light</name>
+                </option>
+                <option value="dark">
+                    <name locale="en_US">dark</name>
+                    <name locale="ru_RU">dark</name>
+                </option>
+            </options>
+        </setting>
+        <setting var="facebook_show_faces" control_type="checkbox">
+            <value>1</value>
+            <name locale="ru_RU">Показать список участников</name>
+            <name locale="en_US">Show the list of participants</name>
+        </setting>
+        <setting var="facebook_stream" control_type="checkbox">
+            <value></value>
+            <name locale="ru_RU">Показать новости группы</name>
+            <name locale="en_US">Show the news of the group</name>
+        </setting>
+        <setting var="facebook_header" control_type="checkbox">
+            <value>1</value>
+            <name locale="ru_RU">Показать надпись "Найдите нас на Facebook"</name>
+            <name locale="en_US">Show the inscription "Find us on Facebook"</name>
+        </setting>		
+        <setting var="facebook_show_border" control_type="checkbox">
+            <value>1</value>
+            <name locale="ru_RU">Объвести рамкой блок "группа Facebook"</name>
+            <name locale="en_US">Add a border to block "Facebook group"</name>
+        </setting>
+        
 
     </settings>
     <locales>
@@ -465,6 +673,23 @@
             <msgid>Total</msgid>
             <msgstr locale="ru_RU">Итого</msgstr>
         </locale>
+        <locale>
+            <msgid>We VKontakte</msgid>
+            <msgstr locale="ru_RU">Мы вконтакте</msgstr>
+        </locale>
+        <locale>
+            <msgid>Follow us on facebook</msgid>
+            <msgstr locale="ru_RU">Мы в Facebook</msgstr>
+        </locale>
+        <locale>
+            <msgid>Wish List</msgid>
+            <msgstr locale="ru_RU">Избранное</msgstr>
+        </locale>
+        <locale>
+            <msgid>Wishlist products</msgid>
+            <msgstr locale="ru_RU">Избранные товары</msgstr>
+        </locale>
+        
         
 
     </locales>
