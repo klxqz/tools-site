@@ -7,7 +7,8 @@
     .table th, .table td {
         padding:8px;
     }
-    .product-grid div.image{
+    .product-grid div.image a{
+        line-height: 170px;
         height: 170px;
     }
 }
@@ -15,8 +16,9 @@
     .container {
         width:1200px;
     }
-    .product-grid div.image{
+    .product-grid div.image a{
         height: 200px;
+        line-height: 200px;
     }
 }
 @media (min-width: 767px) {
@@ -98,14 +100,16 @@
 
 }
 @media (max-width: 991px) {
-    .product-grid div.image{
+    .product-grid div.image a{
         height: 120px;
+        line-height: 120px;
     }
 }
 /******************************************************/
 @media (min-width: 768px) and (max-width: 979px) {
-    .product-grid div.image{
+    .product-grid div.image a{
         height: 120px;
+        line-height: 120px;
     }
     .compare-info td img {max-width:95px}
     .compare-info td a.button span {font-size:12px; padding:7px 8px}
@@ -170,8 +174,9 @@ and (orientation:landscape) {
 }
 /**********************************************/
 @media (max-width: 767px) {
-    .product-grid div.image{
+    .product-grid div.image a{
         height: 100%;
+        line-height: 100%;
     }
     .content_bottom {display:none;}
     aside .box .box-content .box-product ul li .padding {border-top:1px solid #C5C5C5;}

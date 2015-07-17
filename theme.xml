@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd">
-<theme id="tools" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="2.0.0">
+<theme id="tools" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="2.1.0">
     <name locale="en_US">Tools</name>
     <name locale="ru_RU">Tools</name>
     <description locale="ru_RU">Семейство адаптивных тем дизайна.</description>
@@ -331,6 +331,16 @@
                 ]]>
             </name>
         </setting>
+        <setting var="ruble_symbol" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">The symbol of the ruble</name>
+            <name locale="ru_RU">Символ рубля. Необходимо приложение «Магазин»</name>
+        </setting>
+        <setting var="show_currency" control_type="checkbox">
+            <value>1</value>
+            <name locale="ru_RU">Показывать валюту</name>
+            <name locale="en_US">Show currency</name>
+        </setting>
         <setting var="site_phone" control_type="text">
             <value>8 (999) 999 99 99</value>
             <name locale="en_US">Phone</name>
@@ -384,7 +394,32 @@
                     <name locale="en_US">Application «Shop» - categories</name>
                     <name locale="ru_RU">Приложение «Магазин» - категории</name>
                 </option>
+                <option value="user_links">
+                    <name locale="en_US">User links</name>
+                    <name locale="ru_RU">Пользовательские ссылки</name>
+                </option>
             </options>
+        </setting>
+        
+        <setting var="main_menu_user_links" control_type="text">
+            <value><![CDATA[
+/ ; Главная
+/blog/ ; Блог
+/photos/ ; Фото
+                ]]>
+            </value>
+            <name locale="en_US">
+                User links for the main top menu
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                Пользовательские ссылки для главного верхнего меню.
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
         </setting>
         
         
@@ -409,7 +444,31 @@
                     <name locale="en_US">Application «Shop» - categories</name>
                     <name locale="ru_RU">Приложение «Магазин» - категории</name>
                 </option>
+                <option value="user_links">
+                    <name locale="en_US">User links</name>
+                    <name locale="ru_RU">Пользовательские ссылки</name>
+                </option>
             </options>
+        </setting>
+        <setting var="mobile_main_menu_user_links" control_type="text">
+            <value><![CDATA[
+/ ; Главная
+/blog/ ; Блог
+/photos/ ; Фото
+                ]]>
+            </value>
+            <name locale="en_US">
+                User links for the main top menu
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                Пользовательские ссылки для главного верхнего меню.
+            <![CDATA[
+                <hr />	
+                ]]>
+            </name>
         </setting>
         
         <setting var="source_footer_info" control_type="select">
@@ -688,6 +747,10 @@
         <locale>
             <msgid>Wishlist products</msgid>
             <msgstr locale="ru_RU">Избранные товары</msgstr>
+        </locale>
+        <locale>
+            <msgid>Navigation</msgid>
+            <msgstr locale="ru_RU">Навигация</msgstr>
         </locale>
         
         

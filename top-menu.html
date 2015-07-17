@@ -1,43 +1,64 @@
 {if $theme_settings.source_main_menu == 'shop_categories' && $wa->shop}
-
-{if isset($category)}
-{$selected_category=$category.id}
-{else}
-{$selected_category=null}
-{/if}
-<ul class="links">
-    {foreach $wa->shop->categories(0, null, true) as $category}
-    <li><a {if $category.id==$selected_category} class="active"{/if} href="{$category.url}">{$category.name}</a></li>
-    {/foreach}
-</ul>
+    {if isset($category)}
+        {$selected_category=$category.id}
+    {else}
+        {$selected_category=null}
+    {/if}
+    <ul class="links">
+        {foreach $wa->shop->categories(0, null, true) as $category}
+            <li>
+                <a {if $category.id==$selected_category} class="active"{/if} href="{$category.url}">{$category.name}</a>
+            </li>
+        {/foreach}
+    </ul>
 {elseif $theme_settings.source_main_menu == 'shop_pages' && $wa->shop}
 
-{if isset($page.id)}
-{$selected_page=$page.id}
-{else}
-{$selected_page=null}
-{/if}
-<ul class="links">
-    {foreach $wa->shop->pages() as $page}
-    <li><a {if $page.id==$selected_page} class="active"{/if} href="{$page.url}">{$page.name}</a></li>
-    {/foreach}
-</ul>
+    {if isset($page.id)}
+        {$selected_page=$page.id}
+    {else}
+        {$selected_page=null}
+    {/if}
+    <ul class="links">
+        {foreach $wa->shop->pages() as $page}
+            <li>
+                <a {if $page.id==$selected_page} class="active"{/if} href="{$page.url}">{$page.name}</a>
+            </li>
+        {/foreach}
+    </ul>
 {elseif $theme_settings.source_main_menu == 'site_pages'}
 
-{if isset($page.id)}
-{$selected_page=$page.id}
-{else}
-{$selected_page=null}
-{/if}
-<ul class="links">
-    {foreach $wa->site->pages() as $page}
-    <li><a {if $page.id==$selected_page} class="active"{/if} href="{$page.url}">{$page.name}</a></li>
+    {if isset($page.id)}
+        {$selected_page=$page.id}
+    {else}
+        {$selected_page=null}
+    {/if}
+    <ul class="links">
+        {foreach $wa->site->pages() as $page}
+            <li>
+                <a {if $page.id==$selected_page} class="active"{/if} href="{$page.url}">{$page.name}</a>
+            </li>
+        {/foreach}
+    </ul>
+{elseif $theme_settings.source_main_menu == 'user_links'}
+    {$s_links = explode("\n", $theme_settings.main_menu_user_links)}
+    {$user_links = array()}
+    {foreach $s_links as $s_link}
+        {if !empty($s_link)}
+            {$arr = explode(';', $s_link)}
+            {if !empty($arr[0]) && !empty($arr[1])}
+                {$user_link = ['url' => trim($arr[0]), 'name' => trim($arr[1])]}
+                {$num = array_push($user_links, $user_link)}
+            {/if}
+        {/if}
     {/foreach}
-</ul>
+    
+    {wa_print_tree tree=$user_links unfolded=false class="links" elem ='<a href=":url" title=":name">:name</a>'}
 {else}
-<ul class="links">
-    {foreach $wa->apps() as $a}
-    <li><a {if $a.url==$wa_app_url} class="active"{/if} href="{$a.url}">{$a.name}</a></li>
-    {/foreach}
-</ul>
+    <ul class="links">
+        {foreach $wa->apps() as $a}
+            <li>
+                <a {if $a.url==$wa_app_url} class="active"{/if} href="{$a.url}">{$a.name}</a>
+            </li>
+        {/foreach}
+    </ul>
 {/if}

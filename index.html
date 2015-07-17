@@ -9,7 +9,9 @@
         {if !empty($canonical)}<link rel="canonical" href="{$canonical}"/>{/if}
 
         <!-- css -->
-        {if $wa->shop} <link href="{$wa_url}wa-content/font/ruble/arial/fontface.css" rel="stylesheet" type="text/css">{/if}
+        {if !empty($theme_settings.ruble_symbol) && $wa->shop}
+            <link href="{$wa_url}wa-content/font/ruble/arial/fontface.css" rel="stylesheet" type="text/css">
+        {/if}
         {$wa->css()} {* links active plugins CSS *}
 
         <!-- js -->
@@ -83,9 +85,9 @@
         {/if}
         <style>
             {if $theme_settings.bg_custom}
-            html, body {
-                background: url({$wa_theme_url}{$theme_settings.bg_custom}){if $theme_settings.fixed_bg_custom} no-repeat fixed{/if}; 
-            }
+                html, body {
+                    background: url({$wa_theme_url}{$theme_settings.bg_custom}){if $theme_settings.fixed_bg_custom} no-repeat fixed{/if}; 
+                }
             {elseif !empty($theme_settings.bg_image) && $theme_settings.bg_image != 'img/bg/no_bg.png'}
                 html, body { background: url('{$wa_theme_url}{$theme_settings.bg_image}'); }
             {/if}
@@ -134,7 +136,7 @@
                             <!-- auth links -->
                         {/if}					
                     </ul>
-                    {if isset($currencies) && count($currencies) > 1}
+                    {if !empty($theme_settings.show_currency) && isset($currencies) && count($currencies) > 1}
                         <div id="currency" class="header-button">
                             <div>
                                 <div class="heading-1"><i class="fa fa-money"></i>[`Currency`]<i class="fa fa-angle-down"></i></div>
@@ -194,13 +196,13 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        {if isset($currencies) && count($currencies) > 1}
+                                        {if !empty($theme_settings.show_currency) && isset($currencies) && count($currencies) > 1}
                                             {$currency = $wa->shop->currency(true)}
                                             <div id="currency" class="header-button">
                                                 <div>
                                                     <div class="heading-1"><i class="fa fa-money"></i>[`Currency`]<i class="fa fa-angle-down"></i></div>
                                                     <div class="heading">
-                                                        {if $currency.code == 'RUB'}
+                                                        {if $currency.code == 'RUB' && !empty($theme_settings.ruble_symbol)}
                                                             {$currency.sign_html}
                                                         {else}
                                                             {$currency.sign}
@@ -210,7 +212,7 @@
                                                 </div>
                                                 <ul class="currency">
                                                     {foreach $currencies as $c_code => $c}
-                                                        {if $c_code=='RUB'}
+                                                        {if $c_code=='RUB' && !empty($theme_settings.ruble_symbol)}
                                                             <li>
                                                                 <a data-value="{$c_code}" href="#" title="{$c.title}">{$c.sign_html}</a>
                                                             </li>
@@ -234,10 +236,10 @@
                                                 {$theme_settings.site_phone}					
                                             </div>
                                         {/if}
+
                                         {if $wa->shop && $wa->shop->settings('workhours')}
                                             {$wh = $wa->shop->settings('workhours')}
                                             <div class="workhours">{$wh.days_from_to}{if $wh.hours_from && $wh.hours_to}: {$wh.hours_from}&mdash;{$wh.hours_to}{/if}</div>
-
                                         {elseif $theme_settings.site_workhours}
                                             <div class="workhours">{$theme_settings.site_workhours}</div>
                                         {/if}
@@ -280,7 +282,13 @@
                                                             <b>[`Shopping cart`]</b>
                                                             <span class="sc-button"></span>
                                                             <span id="cart-total2">{$cart_count}</span>
-                                                            <span id="cart-total">{wa_currency_html($cart_total, $wa->shop->currency())}</span>
+                                                            <span id="cart-total">
+                                                                {if !empty($theme_settings.ruble_symbol)}
+                                                                    {wa_currency_html($cart_total, $wa->shop->currency())}
+                                                                {else}
+                                                                    {wa_currency($cart_total, $wa->shop->currency())}
+                                                                {/if}
+                                                            </span>
                                                             <i class="fa fa-angle-down"></i>
                                                             <span class="clear"></span>
                                                         </span>
@@ -301,7 +309,13 @@
                                                                                 <td class="name">
                                                                                     <a href="{$wa->shop->productUrl($item.product)}">{$item.name|escape}</a><br>
                                                                                     <span class="quantity">x&nbsp;<span>{$item.quantity}</span></span>
-                                                                                    <span class="total">{wa_currency_html($item.price,$wa->shop->currency())}</span>
+                                                                                    <span class="total">
+                                                                                        {if !empty($theme_settings.ruble_symbol)}
+                                                                                            {wa_currency_html($item.price,$wa->shop->currency())}
+                                                                                        {else}
+                                                                                            {wa_currency($item.price,$wa->shop->currency())}
+                                                                                        {/if}
+                                                                                    </span>
                                                                                     <div class="remove"><span><i class="fa fa-times-circle"></i>[`Remove`]</span></div>
                                                                                 </td>
                                                                             </tr>
@@ -314,11 +328,27 @@
                                                                     <tbody>
                                                                         <tr>
                                                                             <td align="right" class="total-right"><b>[`Discount`]:</b></td>
-                                                                            <td align="left" class="total-left"><span class="t-price shopping_cart_discount">{wa_currency_html($cart_discount, $wa->shop->currency())}</span></td>
+                                                                            <td align="left" class="total-left">
+                                                                                <span class="t-price shopping_cart_discount">
+                                                                                    {if !empty($theme_settings.ruble_symbol)}
+                                                                                        {wa_currency_html($cart_discount, $wa->shop->currency())}
+                                                                                    {else}
+                                                                                        {wa_currency($cart_discount, $wa->shop->currency())}
+                                                                                    {/if}
+                                                                                </span>
+                                                                            </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td align="right" class="total-right"><b>[`Total`]:</b></td>
-                                                                            <td align="left" class="total-left"><span class="t-price shopping_cart_total">{wa_currency_html($cart_total, $wa->shop->currency())}</span></td>
+                                                                            <td align="left" class="total-left">
+                                                                                <span class="t-price shopping_cart_total">
+                                                                                    {if !empty($theme_settings.ruble_symbol)}
+                                                                                        {wa_currency_html($cart_total, $wa->shop->currency())}
+                                                                                    {else}
+                                                                                        {wa_currency($cart_discount, $wa->shop->currency())}
+                                                                                    {/if}
+                                                                                </span>
+                                                                            </td>
                                                                         </tr>
                                                                     </tbody>
                                                                 </table>
@@ -374,9 +404,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--noindex-->
                             <div id="menu-gadget">
                                 {include file="menu-gadget.html" inline}
                             </div>
+                            <!--/noindex-->
                         </div>
                     </header>
                     <section>

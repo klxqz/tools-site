@@ -1,44 +1,62 @@
 {if $theme_settings.source_main_menu_mobile == 'shop_categories' && $wa->shop}
-<div class="row">
-    <div class="col-sm-12">
-        <div id="menu-icon">[`Catalog`]</div>
-        {if isset($category)}
-        {$selected_category=$category.id}
-        {else}
-        {$selected_category=null}
-        {/if}
-        {wa_print_tree tree=$wa->shop->categories(0, null, true) selected=$selected_category unfolded=true collapsible_class='parent' class="sf-menu-phone" elem ='<a href=":url" title=":name">:name</a>'}
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="menu-icon">[`Catalog`]</div>
+            {if isset($category)}
+                {$selected_category=$category.id}
+            {else}
+                {$selected_category=null}
+            {/if}
+            {wa_print_tree tree=$wa->shop->categories(0, null, true) selected=$selected_category unfolded=true collapsible_class='parent' class="sf-menu-phone" elem ='<a href=":url" title=":name">:name</a>'}
+        </div>
     </div>
-</div>
 {elseif $theme_settings.source_main_menu_mobile == 'shop_pages' && $wa->shop}
-<div class="row">
-    <div class="col-sm-12">
-        <div id="menu-icon">[`Information`]</div>
-        {if isset($page.id)}
-        {$selected_page=$page.id}
-        {else}
-        {$selected_page=null}
-        {/if}
-        {wa_print_tree tree=$wa->shop->pages() class="sf-menu-phone" attrs = 'id="page-list"' elem ='<a href=":url">:name</a>' collapsible_class='parent' selected=$selected_page unfolded=true}
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="menu-icon">[`Information`]</div>
+            {if isset($page.id)}
+                {$selected_page=$page.id}
+            {else}
+                {$selected_page=null}
+            {/if}
+            {wa_print_tree tree=$wa->shop->pages() class="sf-menu-phone" attrs = 'id="page-list"' elem ='<a href=":url">:name</a>' collapsible_class='parent' selected=$selected_page unfolded=true}
+        </div>
     </div>
-</div>
 {elseif $theme_settings.source_main_menu_mobile == 'site_pages'}
-<div class="row">
-    <div class="col-sm-12">
-        <div id="menu-icon">[`Information`]</div>
-        {if isset($page.id)}
-        {$selected_page=$page.id}
-        {else}
-        {$selected_page=null}
-        {/if}
-        {wa_print_tree tree=$wa->site->pages() class="sf-menu-phone" attrs = 'id="page-list"' elem ='<a href=":url">:name</a>' collapsible_class='parent' selected=$selected_page unfolded=true}
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="menu-icon">[`Information`]</div>
+            {if isset($page.id)}
+                {$selected_page=$page.id}
+            {else}
+                {$selected_page=null}
+            {/if}
+            {wa_print_tree tree=$wa->site->pages() class="sf-menu-phone" attrs = 'id="page-list"' elem ='<a href=":url">:name</a>' collapsible_class='parent' selected=$selected_page unfolded=true}
+        </div>
     </div>
-</div>
-{else}
-<div id="menu-icon">[`Site links`]</div>
-<ul id="page-list" class="sf-menu-phone">
-    {foreach $wa->apps() as $a}
-    <li{if $a.url==$wa_app_url} class="selected"{/if}><a  href="{$a.url}">{$a.name}</a></li>
+{elseif $theme_settings.source_main_menu_mobile == 'user_links'}
+    {$s_links = explode("\n", $theme_settings.mobile_main_menu_user_links)}
+    {$user_links = array()}
+    {foreach $s_links as $s_link}
+        {if !empty($s_link)}
+            {$arr = explode(';', $s_link)}
+            {if !empty($arr[0]) && !empty($arr[1])}
+                {$user_link = ['url' => trim($arr[0]), 'name' => trim($arr[1])]}
+                {$num = array_push($user_links, $user_link)}
+            {/if}
+        {/if}
     {/foreach}
-</ul>
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="menu-icon">[`Navigation`]</div>
+            {wa_print_tree tree=$user_links unfolded=false class="sf-menu-phone" attrs = 'id="page-list"' elem ='<a href=":url" title=":name">:name</a>'}
+        </div>
+    </div>
+{else}
+    <div id="menu-icon">[`Site links`]</div>
+    <ul id="page-list" class="sf-menu-phone">
+        {foreach $wa->apps() as $a}
+            <li{if $a.url==$wa_app_url} class="selected"{/if}><a  href="{$a.url}">{$a.name}</a></li>
+            {/foreach}
+    </ul>
 {/if}
