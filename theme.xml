@@ -5,11 +5,11 @@
     <name locale="ru_RU">Tools</name>
     <description locale="ru_RU">Семейство адаптивных тем дизайна.</description>
     <files>
-        <file path="index.html" custom="0" modified="1">
+        <file path="index.html" custom="0">
             <description locale="en_US">Core layout of the Tools theme family</description>
             <description locale="ru_RU"/>
         </file>
-        <file path="tools.css" custom="0" modified="1">
+        <file path="tools.css" custom="0">
             <description locale="en_US">Core CSS of the Tools theme family</description>
             <description locale="ru_RU"/>
         </file>
