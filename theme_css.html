@@ -1,0 +1,138 @@
+
+<style>
+    a:hover{ color:{$theme_settings.custom_base_color} }
+    h1{ color:{$theme_settings.custom_base_color} }
+    h2{ color:{$theme_settings.custom_base_color} }
+    header{ background:{$theme_settings.custom_header_color} }
+    .swipe-menu #currency > ul li span.act{ color:{$theme_settings.custom_base_color} }
+    .swipe-menu #language > ul li span.act{ color:{$theme_settings.custom_base_color} }
+    header .header-button.active>div,header .header-button>div:hover{ color:{$theme_settings.custom_base_color} }
+    header .header-button>ul li span:hover{ color:{$theme_settings.custom_base_color} }
+    #body .swipe .swipe-menu li a:hover{ color:{$theme_settings.custom_base_color} }
+    #cart .heading span.link_a{ color:{$theme_settings.custom_base_color} }
+    .remove span:hover i{ color:{$theme_settings.custom_base_color} }
+    header #cart .cart .remove>span:hover{ color:{$theme_settings.custom_base_color} }
+    .tooltip-inner{ background-color:{$theme_settings.custom_base_color} }
+    .tooltip.top .tooltip-arrow{ border-top-color:{$theme_settings.custom_base_color} }
+    .tooltip.right .tooltip-arrow{ border-right-color:{$theme_settings.custom_base_color} }
+    .tooltip.left .tooltip-arrow{ border-left-color:{$theme_settings.custom_base_color} }
+    .tooltip.bottom .tooltip-arrow{ border-bottom-color:{$theme_settings.custom_base_color} }
+    .breadcrumb a.last{ color:{$theme_settings.custom_base_color} }
+    .pagination .links a:hover,.pagination .links li.selected a{ border:1px solid {$theme_settings.custom_base_color} }
+    a.button-i i{ color:{$theme_settings.custom_base_color} }
+    aside .box .box-content .box-product ul li .padding .cart a.button i{ color:{$theme_settings.custom_base_color} }
+    .zoom-top a{ background-color:{$theme_settings.custom_base_color} }
+    .box.category .box-heading{ color:{$theme_settings.custom_base_color} }
+    .box-category > ul > li ul > li > a.selected{ color:{$theme_settings.custom_base_color} }
+    #list_b i,#grid_b i{ color:{$theme_settings.custom_base_color} }
+    #full_gallery .prev:hover,#full_gallery .next:hover{ color:{$theme_settings.custom_base_color} }
+    .image-additional .next:hover,.image-additional .prev:hover{ color:{$theme_settings.custom_base_color} }
+    .product-info .description .product-section{ color:{$theme_settings.custom_base_color} }
+    .product-info .description .product-section a{  }
+    .product-info .price .price-new{ color:{$theme_settings.custom_base_color} }
+    a.button-prod:hover{ background-color:{$theme_settings.custom_base_color} }
+    a.button-prod i{ color:{$theme_settings.custom_base_color} }
+    .product-info .review a:hover{ color:{$theme_settings.custom_base_color} }
+    .product-info .review a+a{ color:{$theme_settings.custom_base_color} }
+    .tabs .tab-heading{ border-bottom:4px solid {$theme_settings.custom_base_color} }
+    .compare-info td.name a{ color:{$theme_settings.custom_base_color} }
+    .compare-info td.td-price{ color:{$theme_settings.custom_base_color} }
+    .wishlist-product tbody .name a{ color:{$theme_settings.custom_base_color} }
+    .table .total,.table .price{ color:{$theme_settings.custom_base_color} }
+    .checkout-heading{ border-top:4px solid {$theme_settings.custom_base_color} }
+    .checkout-content label a{ color:{$theme_settings.custom_base_color} }
+    .button-return-right-i:hover,.button-return-right:hover{ color:{$theme_settings.custom_base_color} }
+    a:hover i.fa.fa-trash-o-o{ color:{$theme_settings.custom_base_color} }
+    .cart-info td.name a{ color:{$theme_settings.custom_base_color} }
+    a.input-update:hover i{ color:{$theme_settings.custom_base_color} }
+    table#total td+td{ color:{$theme_settings.custom_base_color} }
+    .success a:hover{ color:{$theme_settings.custom_base_color} }
+    .success span:hover{ color:{$theme_settings.custom_base_color} }
+    .success i:hover{ color:{$theme_settings.custom_base_color} }
+    .success i.fa.fa-thumbs-up{ color:{$theme_settings.custom_base_color} }
+    .success a{ color:{$theme_settings.custom_base_color} }
+    .related .prev:hover,.related .next:hover{ color:{$theme_settings.custom_base_color} }
+    .box .box-content .box-product ul li .quick-view-button:hover{ color:{$theme_settings.custom_base_color} }
+    .box .box-content .box-product ul li .padding .cart a.button i{ color:{$theme_settings.custom_base_color} }
+    .product-grid ul li .padding .cart a.button i{ color:{$theme_settings.custom_base_color} }
+    #search .button-search{ 
+        background:{$theme_settings.custom_base_color};
+        border-color:{$theme_settings.custom_menu_color}  !important;
+        border-width: 0px 0px 0px 1px !important;
+    }
+    ul.sf-menu > li>a:hover,ul.sf-menu > li.sfHover>a,ul.sf-menu > ul > li.active>a{ color:{$theme_settings.custom_base_color} }
+    .sf-mega-section >li a:hover,.sf-mega-section >li.sfHover a{ color:{$theme_settings.custom_base_color} }
+    .sf-menu-phone li i{ color:{$theme_settings.custom_base_color} }
+    .camera_caption h1{ color:{$theme_settings.custom_base_color} }
+    .camera_caption a:hover{ color:{$theme_settings.custom_base_color} }
+    .camera_caption a i{ color:{$theme_settings.custom_base_color} }
+    .camera_wrap .camera_pag .camera_pag_ul li:hover span,.camera_wrap .camera_pag .camera_pag_ul li:hover{ background:{$theme_settings.custom_base_color} }
+    .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent>span,.camera_wrap .camera_pag .camera_pag_ul li.cameracurrent{ background:{$theme_settings.custom_base_color} }
+    .camera_wrap .camera_pag .camera_pag_ul li > span{ background-color:#000000 }
+    .bx-wrapper .bx-controls-direction a:hover{ color:{$theme_settings.custom_base_color} }
+    .content_bottom:after,.content_bottom:before{ background:none repeat scroll 0 0 {$theme_settings.custom_base_color} }
+    .content_bottom .banner{ background-color:{$theme_settings.custom_base_color} }
+    footer .row li a{ color:{$theme_settings.custom_base_color} }
+    input[type="submit"]:hover,input[type="button"]:hover,
+    a.button span{
+        color: {$theme_settings.custom_text_buttom_noactive_color};
+    }
+    a.button:hover,#search .button-search{
+        background-color: {$theme_settings.custom_base_color}!important;
+        background:{$theme_settings.custom_base_color};
+        background:-moz-linear-gradient(top,{$theme_settings.custom_base_color} 0%,rgba(0, 0, 0, 0.05) 100%);
+        background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,{$theme_settings.custom_base_color}),color-stop(100%,rgba(0, 0, 0, 0.05)));
+        background:-webkit-linear-gradient(top,{$theme_settings.custom_base_color} 0%,rgba(0, 0, 0, 0.05) 100%);
+        background:-o-linear-gradient(top,{$theme_settings.custom_base_color} 0%,rgba(0, 0, 0, 0.05) 100%);
+        background:-ms-linear-gradient(top,{$theme_settings.custom_base_color} 0%,rgba(0, 0, 0, 0.05)100%);
+        background:linear-gradient(to bottom,{$theme_settings.custom_base_color} 0%,rgba(0, 0, 0, 0.05) 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='{$theme_settings.custom_base_color}',endColorstr='rgba(0, 0, 0, 0.05)',GradientType=0 );
+        border-color: rgba(0, 0, 0, 0.2);
+        border-width: 0px 1px 1px 0;
+        color:{$theme_settings.custom_text_buttom_color};
+    }
+    a.button:hover span,#search .button-search span{
+        color:{$theme_settings.custom_text_buttom_color};
+    }
+    a.button-prod:hover{ color:#FFFFFF }
+    .box.category .box-content{ border-bottom:1px solid rgba(255, 255, 255, 0.2);background-color:{$theme_settings.custom_menu_color} }
+
+    .box.category .box-heading,header .toprow{ 
+        background-color: {$theme_settings.custom_menu_color}!important;
+        background:{$theme_settings.custom_menu_color};
+        background:-moz-linear-gradient(top,rgba(255, 255, 255, 0.1) 0%,{$theme_settings.custom_menu_color} 100%);
+        background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(255, 255, 255, 0.1)),color-stop(100%,{$theme_settings.custom_menu_color}));
+        background:-webkit-linear-gradient(top,rgba(255, 255, 255, 0.1) 0%,{$theme_settings.custom_menu_color} 100%);
+        background:-o-linear-gradient(top,rgba(255, 255, 255, 0.1) 0%,{$theme_settings.custom_menu_color} 100%);
+        background:-ms-linear-gradient(top,rgba(255, 255, 255, 0.1) 0%,{$theme_settings.custom_menu_color} 100%);
+        background:linear-gradient(to bottom,rgba(255, 255, 255, 0.1) 0%,{$theme_settings.custom_menu_color} 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(255, 255, 255, 0.1)',endColorstr='{$theme_settings.custom_menu_color}',GradientType=0 );
+        color:{$theme_settings.custom_base_color} 
+    }
+    #column-left .box-category  a,header .toprow{ color:{$theme_settings.custom_menu_text_color} }
+    .box-category > ul > li > ul{ background-color:rgba(0,0,0,0.5) }
+    @media (min-width:767px){ .cart-position #cart .heading span.link_a #cart-total2{ background-color:#fff;color:#000 }
+    }
+    .box-category > ul > li ul > li > a{ 
+        color: {$theme_settings.custom_menu_text_sub_color};
+    }
+
+    .box-category > ul > li.selected>a, .box-category > ul > li>a:hover {
+        color:    {$theme_settings.custom_base_color};
+    }
+    header .links a.active, header .links a:hover {
+        color:    {$theme_settings.custom_base_color};
+    }
+    .box-category > ul > li {
+
+        background-color:transparent; 
+        border-top: 1px solid rgba(255, 255, 255, 0.35); 
+
+    }
+    .box.category .box-heading {
+        border-bottom: 0px;
+    }
+    header .toprow{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.35); 
+    }
+</style>

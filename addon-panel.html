@@ -4,29 +4,37 @@
 
             <div class="col-sm-3">
                 {$wishlist = waRequest::cookie('shop_wishlist', array(), waRequest::TYPE_ARRAY_INT)}
-                <a class="wishlist" rel="nofollow" href="{$wa->getUrl('shop/frontend/search')}?list=wishlist" id="favorite-link">
+                <a class="wishlist" rel="nofollow" href="{$wa->getUrl('shop/frontend/search')}?list=wishlist"
+                   id="favorite-link" {if count($wishlist) == 0} disabled="disabled" {/if}>
                     <i class="fa fa-heart"></i>
                     <span class="text">Товары в избранном</span>(<span class="count">{count($wishlist)}</span>)
                 </a>
             </div>
             <div class="col-sm-3">
                 {$compare = waRequest::cookie('shop_compare', array(), waRequest::TYPE_ARRAY_INT)}
-                <a class="compare" rel="nofollow" href="{$wa->getUrl('shop/frontend/compare/', ['id' => implode(',', $compare) ])}">
+                <a class="compare" rel="nofollow"
+                   href="{$wa->getUrl('shop/frontend/compare/', ['id' => implode(',', $compare) ])}" {if count($compare) < 2} disabled="disabled" {/if} >
                     <i class="fa fa-bar-chart"></i>
                     <span class="text">Товары для сравнения</span>(<span class="count">{count($compare)}</span>)
                 </a>
             </div>
             <div class="col-sm-3">
                 {$viewed_products = waRequest::cookie('viewed_products')}
-                {$viewed_products = explode(',', $viewed_products)}
-                <a rel="nofollow" href="{$wa->getUrl('shop/frontend/search')}?list=viewed_products" id="lastview-link">
+                {if $viewed_products}
+                    {$viewed_products = explode(',', $viewed_products)}
+                {else}
+                    {$viewed_products = []}
+                {/if}
+                <a rel="nofollow" href="{$wa->getUrl('shop/frontend/search')}?list=viewed_products"
+                   id="lastview-link" {if count($viewed_products) == 0} disabled="disabled" {/if}>
                     <i class="fa fa-eye"></i>
                     <span class="text">Просмотренные товары</span>(<span class="count">{count($viewed_products)}</span>)
                 </a>
             </div>
             <div class="col-sm-3">
                 {$cart_count = $wa->shop->cart->count()}
-                <a class="cart" href="{$wa->getUrl('shop/frontend/cart')}">
+                <a class="cart"
+                   href="{$wa->getUrl('shop/frontend/cart')}" {if $cart_count == 0} disabled="disabled" {/if}>
                     <i class="fa fa-shopping-cart"></i>
                     <span class="text">[`Shopping cart`]</span>(<span class="count">{$cart_count}</span>)
                 </a>

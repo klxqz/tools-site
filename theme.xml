@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd">
-<theme id="tools" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="2.1.0">
+<theme id="tools" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="2.4.0" edition="7">
     <name locale="en_US">Tools</name>
     <name locale="ru_RU">Tools</name>
     <description locale="ru_RU">Семейство адаптивных тем дизайна.</description>
     <files>
-        <file path="index.html">
+        <file path="index.html" custom="0" modified="1">
             <description locale="en_US">Core layout of the Tools theme family</description>
-            <description locale="ru_RU">Основной макет тем дизайна семейства Tools</description>
+            <description locale="ru_RU"/>
         </file>
-        <file path="tools.css">
+        <file path="tools.css" custom="0" modified="1">
             <description locale="en_US">Core CSS of the Tools theme family</description>
-            <description locale="ru_RU">Основной файл CSS-стилей семейства тем дизайна Tools</description>
+            <description locale="ru_RU"/>
         </file>
         <file path="content.html" custom="0">
             <description locale="en_US">Main layout for the Site app content</description>
@@ -117,90 +117,114 @@
             <description locale="en_US">Color scheme "White and Orange"</description>
             <description locale="ru_RU">Цветовая схема "Бело-Оранжевый"</description>
         </file>
-        <file path="widget.vk.html">
-            <description locale="en_US">vk widget</description>
-            <description locale="ru_RU">Виджет ВКонтакте</description>
-        </file>
-        <file path="widget.facebook.html">
-            <description locale="en_US">facebook widget</description>
-            <description locale="ru_RU">Виджет Facebook</description>
-        </file>
+
     </files>
     <settings>
         <setting var="main_code" control_type="text">
-            <value></value>
+            <value/>
             <name locale="en_US">
-                <![CDATA[
-                <script>
-                    $(function(){
-                        $('.p-title').closest('.field').addClass('custom-field');
-                    });
-                </script>
-                <style>
+                &lt;script&gt;
+                $(function(){
+                $('.p-title').closest('.field').addClass('custom-field');
+                });
+                &lt;/script&gt;
+                &lt;style&gt;
                 .field.custom-field .name{
-                    float:none;width: auto;
+                float:none;width: auto;
                 }
                 .field.custom-field .value{
-                    display:none;
+                display:none;
                 }
                 .p-title{
-                    font-weight: bold;color: #000;
+                font-weight: bold;color: #000;
                 }
                 .wa-theme-image-select{
-                    max-width: 750px;
+                max-width: 750px;
                 }
                 .wa-theme-image-select a img{
-                    height: 100px;width: 100px;
+                height: 100px;width: 100px;
                 }
-                </style>
-                <p class="p-title"></p>	
-                ]]>
+                &lt;/style&gt;
+                &lt;p class="p-title"&gt;&lt;/p&gt;	
+                                <![CDATA[
+                <style>
+               .color[type="text"] {
+    width: 137px !important;
+    min-width: auto!important;
+}
+                </style>]]>
+                
             </name>
             <name locale="ru_RU">
-                <![CDATA[
-                <script>
-                    $(function(){
-                        $('.p-title').closest('.field').addClass('custom-field');
-                    });
-                </script>
-                <style>
+                &lt;script&gt;
+                $(function(){
+                $('.p-title').closest('.field').addClass('custom-field');
+                });
+                &lt;/script&gt;
+                &lt;style&gt;
                 .field.custom-field .name{
-                    float:none;width: auto;
+                float:none;width: auto;
                 }
                 .field.custom-field .value{
-                    display:none;
+                display:none;
                 }
                 .p-title{
-                    font-size:120%;font-weight: bold;color: #000;
+                font-size:120%;font-weight: bold;color: #000;
                 }
                 .wa-theme-image-select{
-                    max-width: 750px;
+                max-width: 750px;
                 }
                 .wa-theme-image-select a img{
-                    height: 100px;width: 100px;
+                height: 100px;width: 100px;
                 }
+                &lt;/style&gt;
+                &lt;p class="p-title"&gt;&lt;/p&gt;		
+                <![CDATA[
+                <style>
+               .color[type="text"] {
+    width: 137px !important;
+    min-width: auto!important;
+}
                 </style>
-                <p class="p-title"></p>		
-                ]]>
+
+<script>
+$(document).ready(function(){
+    $('[name="parent_settings[color_scheme]"]').each(function(){
+        if($(this).val()!='users'){
+        $('[name$="color]"').closest('.field').slideUp(200);
+        }
+    });
+    
+     $('[name="parent_settings[color_scheme]"]').change(function(){
+        if($(this).val()=='users'){
+        $('[name$="color]"').closest('.field').slideDown(200);
+        }
+        else{
+        $('[name$="color]"').closest('.field').slideUp(200);
+        }
+    });
+
+
+  
+});
+</script>
+]]>
+
             </name>
         </setting>
-        
         <setting var="customization_title" control_type="text">
-            <value></value>
+            <value/>
             <name locale="en_US">
-                <![CDATA[
-                <hr /><br/><br/>
-                <p class="p-title">Customization</p>	
-                ]]>
+                &lt;hr /&gt;&lt;br/&gt;&lt;br/&gt;
+                &lt;p class="p-title"&gt;Customization&lt;/p&gt;	
+                
             </name>
             <name locale="ru_RU">
-                <![CDATA[
-                <hr /><br/><br/>
-                <p class="p-title">Кастомизация</p>	
-                ]]>
+                &lt;hr /&gt;&lt;br/&gt;&lt;br/&gt;
+                &lt;p class="p-title"&gt;Кастомизация&lt;/p&gt;	
+                
             </name>
         </setting>
-        
         <setting var="logo" control_type="image">
             <value>img/logo.png</value>
             <filename>img/logo.*</filename>
@@ -256,56 +280,95 @@
                     <name locale="en_US">White and DarkBlue</name>
                     <name locale="ru_RU">Бело-Синий</name>
                 </option>
-                
+                <option value="users">
+                    <name locale="en_US">users</name>
+                    <name locale="ru_RU">Пользовательская</name>
+                </option>  
             </options>
         </setting>
         
+        <setting var="custom_base_color" control_type="color">
+            <value>#ffe402</value>
+            <name locale="en_US">Base color<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+            <name locale="ru_RU">Базовый цвет<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+        </setting>
+        <setting var="custom_header_color" control_type="color">
+            <value>#ffe402</value>
+            <name locale="en_US">Header color<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+            <name locale="ru_RU">Цвет верхней части Header<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+        </setting>
+        <setting var="custom_menu_color" control_type="color">
+            <value>#323232</value>
+            <name locale="en_US">Color menu<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+            <name locale="ru_RU">Цвет меню<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+        </setting>
+        <setting var="custom_menu_text_color" control_type="color">
+            <value>#ffffff</value>
+            <name locale="en_US">Color url main menu<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+            <name locale="ru_RU">Цвет ссылок в основных меню<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+        </setting>
+        <setting var="custom_menu_text_sub_color" control_type="color">
+            <value>#7a7a7a</value>
+            <name locale="en_US">Color url sub main menu<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+            <name locale="ru_RU">Цвет ссылок подкатегорий в основных меню<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+        </setting>
+
+        <setting var="custom_text_buttom_noactive_color" control_type="color">
+            <value>#ffffff</value>
+            <name locale="en_US">Color text button<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+            <name locale="ru_RU">Цвет текста у кнопок<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+        </setting>
+        <setting var="custom_text_buttom_color" control_type="color">
+            <value>#000000</value>
+            <name locale="en_US">Color text button hover<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+            <name locale="ru_RU">Цвет текста у кнопок при наведении<![CDATA[<div class="custom-color-scheme-field"></div>]]></name>
+        </setting>
+
+        
         <setting var="transparent_header" control_type="checkbox">
-            <value>0</value>
+            <value/>
             <name locale="en_US">transparent header</name>
             <name locale="ru_RU">Бесцветная, прозрачная "шапка"</name>
         </setting>
-        
         <setting var="bg_image" control_type="image_select">
             <value>img/bg/no_bg.png</value>
             <name locale="en_US">Background</name>
             <name locale="ru_RU">Фон</name>
             <options>
-                <option value="img/bg/no_bg.png"></option>
-                <option value="img/bg/water.jpg"></option>
-                <option value="img/bg/lava3.jpg"></option>
-                <option value="img/bg/lava2.jpg"></option>
-                <option value="img/bg/lava.jpg"></option>
-                <option value="img/bg/stars2.jpg"></option>
-                <option value="img/bg/stars.jpg"></option>
-                <option value="img/bg/gravel4.jpg"></option>
-                <option value="img/bg/gravel3.jpg"></option>
-                <option value="img/bg/gravel2.jpg"></option>
-                <option value="img/bg/gravel.jpg"></option>
-                <option value="img/bg/rose.jpg"></option>
-                <option value="img/bg/graffiti2.jpg"></option>
-                <option value="img/bg/graffiti.jpg"></option>
-                <option value="img/bg/protector.jpg"></option>
-                <option value="img/bg/parket.jpg"></option>
-                <option value="img/bg/wood.jpg"></option>
-                <option value="img/bg/carbon2.jpg"></option>
-                <option value="img/bg/carbon.jpg"></option>
-                <option value="img/bg/bg-style2.gif"></option>
-                <option value="img/bg/bg-style3.jpg"></option>
-                <option value="img/bg/bg-style4.jpg"></option>
-                <option value="img/bg/bg-style5.jpg"></option>
-                <option value="img/bg/cloth.jpg"></option>
-                <option value="img/bg/grey.jpg"></option>
-                <option value="img/bg/red.jpg"></option>
-                <option value="img/bg/blue.jpg"></option>
-                <option value="img/bg/green.jpg"></option>
-                <option value="img/bg/purple.jpg"></option>
-                <option value="img/bg/yellow.jpg"></option>
+                <option value="img/bg/no_bg.png"/>
+                <option value="img/bg/water.jpg"/>
+                <option value="img/bg/lava3.jpg"/>
+                <option value="img/bg/lava2.jpg"/>
+                <option value="img/bg/lava.jpg"/>
+                <option value="img/bg/stars2.jpg"/>
+                <option value="img/bg/stars.jpg"/>
+                <option value="img/bg/gravel4.jpg"/>
+                <option value="img/bg/gravel3.jpg"/>
+                <option value="img/bg/gravel2.jpg"/>
+                <option value="img/bg/gravel.jpg"/>
+                <option value="img/bg/rose.jpg"/>
+                <option value="img/bg/graffiti2.jpg"/>
+                <option value="img/bg/graffiti.jpg"/>
+                <option value="img/bg/protector.jpg"/>
+                <option value="img/bg/parket.jpg"/>
+                <option value="img/bg/wood.jpg"/>
+                <option value="img/bg/carbon2.jpg"/>
+                <option value="img/bg/carbon.jpg"/>
+                <option value="img/bg/bg-style2.gif"/>
+                <option value="img/bg/bg-style3.jpg"/>
+                <option value="img/bg/bg-style4.jpg"/>
+                <option value="img/bg/bg-style5.jpg"/>
+                <option value="img/bg/cloth.jpg"/>
+                <option value="img/bg/grey.jpg"/>
+                <option value="img/bg/red.jpg"/>
+                <option value="img/bg/blue.jpg"/>
+                <option value="img/bg/green.jpg"/>
+                <option value="img/bg/purple.jpg"/>
+                <option value="img/bg/yellow.jpg"/>
             </options>
         </setting>
-        
         <setting var="bg_custom" control_type="image">
-            <value></value>
+            <value/>
             <filename>img/bg/*</filename>
             <name locale="en_US">custom background</name>
             <name locale="ru_RU">Пользовательский фон</name>
@@ -315,20 +378,17 @@
             <name locale="en_US">fixed custom background</name>
             <name locale="ru_RU">Фиксировать пользовательский фон</name>
         </setting>
-        
         <setting var="basic_title" control_type="text">
-            <value></value>
+            <value/>
             <name locale="en_US">
-                <![CDATA[
-                <hr /><br/><br/>
-                <p class="p-title">Setting basic elements</p>	
-                ]]>
+                &lt;hr /&gt;&lt;br/&gt;&lt;br/&gt;
+                &lt;p class="p-title"&gt;Setting basic elements&lt;/p&gt;	
+                
             </name>
             <name locale="ru_RU">
-                <![CDATA[
-                <hr /><br/><br/>
-                <p class="p-title">Настройка основных элементов.</p>	
-                ]]>
+                &lt;hr /&gt;&lt;br/&gt;&lt;br/&gt;
+                &lt;p class="p-title"&gt;Настройка основных элементов.&lt;/p&gt;	
+                
             </name>
         </setting>
         <setting var="ruble_symbol" control_type="checkbox">
@@ -366,13 +426,11 @@
             <name locale="en_US">Link to vk</name>
             <name locale="ru_RU">Ссылка на ВКонтакте</name>
         </setting>
-        
         <setting var="footer_banner" control_type="text">
-            <value>&lt;i class=&quot;fa fa-truck&quot;&gt;&lt;/i&gt;Бесплатная доставка от 5 000 руб.</value>
+            <value>&lt;i class="fa fa-truck"&gt;&lt;/i&gt;Бесплатная доставка от 5 000 руб.</value>
             <name locale="en_US">Footer banner</name>
             <name locale="ru_RU">Баннер в подвале</name>
         </setting>
-  
         <setting var="source_main_menu" control_type="select">
             <value>apps</value>
             <name locale="en_US">Source for the main top menu</name>
@@ -400,29 +458,25 @@
                 </option>
             </options>
         </setting>
-        
         <setting var="main_menu_user_links" control_type="text">
-            <value><![CDATA[
-/ ; Главная
+            <value><![CDATA[/ ; Главная
 /blog/ ; Блог
 /photos/ ; Фото
-                ]]>
-            </value>
+                
+            ]]></value>
             <name locale="en_US">
                 User links for the main top menu
-            <![CDATA[
-                <hr />	
-                ]]>
+            
+                &lt;hr /&gt;	
+                
             </name>
             <name locale="ru_RU">
                 Пользовательские ссылки для главного верхнего меню.
-            <![CDATA[
-                <hr />	
-                ]]>
+            
+                &lt;hr /&gt;	
+                
             </name>
         </setting>
-        
-        
         <setting var="source_main_menu_mobile" control_type="select">
             <value>shop_categories</value>
             <name locale="en_US">Source for the main top menu(Mobile version)</name>
@@ -451,26 +505,24 @@
             </options>
         </setting>
         <setting var="mobile_main_menu_user_links" control_type="text">
-            <value><![CDATA[
-/ ; Главная
+            <value><![CDATA[/ ; Главная
 /blog/ ; Блог
 /photos/ ; Фото
-                ]]>
-            </value>
+                
+            ]]></value>
             <name locale="en_US">
                 User links for the main top menu
-            <![CDATA[
-                <hr />	
-                ]]>
+            
+                &lt;hr /&gt;	
+                
             </name>
             <name locale="ru_RU">
                 Пользовательские ссылки для главного верхнего меню.
-            <![CDATA[
-                <hr />	
-                ]]>
+            
+                &lt;hr /&gt;	
+                
             </name>
         </setting>
-        
         <setting var="source_footer_info" control_type="select">
             <value>shop_pages</value>
             <name locale="en_US">Source for block «Information» at the bottom of the page</name>
@@ -486,38 +538,34 @@
                 </option>
             </options>
         </setting>
-        
         <setting var="is_autocomplete" control_type="checkbox">
             <value>1</value>
             <name locale="en_US">Auto Search products</name>
             <name locale="ru_RU">Автопоиск товаров (выпадающий список товаров появляется при вводе первых символов). Необходимо приложение «Магазин»</name>
         </setting>
-        
         <setting var="scroll_up" control_type="checkbox">
-            <value>1</value>
+            <value/>
             <name locale="en_US">Scroll up</name>
             <name locale="ru_RU">Прокрутка вверху</name>
         </setting>
-        
         <setting var="addon_panel" control_type="checkbox">
             <value>1</value>
             <name locale="en_US">Addon panel</name>
             <name locale="ru_RU">Дополнительная панель внизу экрана</name>
         </setting>
-        
-        
+
         <setting var="vk_widget_title" control_type="text">
             <value></value>
             <name locale="en_US">
                 <![CDATA[
                 <hr /><br/><br/>
-                <p class="p-title">VK widget</p>	
+                <p class="p-title"> Widgets</p>	
                 ]]>
             </name>
             <name locale="ru_RU">
                 <![CDATA[
                 <hr /><br/><br/>
-                <p class="p-title">Виджет Вконтакте.</p>	
+                <p class="p-title"> Виджеты</p>	
                 ]]>
             </name>
         </setting>
@@ -527,73 +575,19 @@
             <name locale="en_US">VK widget</name>
             <name locale="ru_RU">Виджет ВКонтакте</name>
         </setting>
-        <setting var="vk_id" control_type="text">
-            <value>62260728</value>
-            <name locale="en_US">VK group id</name>
-            <name locale="ru_RU">Идентификатор группы ВКонтакте</name>
-        </setting>
-        <setting var="vk_width" control_type="text">
-            <value>250</value>
-            <name locale="en_US">width</name>
-            <name locale="ru_RU">Ширина</name>
-        </setting>
-        <setting var="vk_height" control_type="text">
-            <value>280</value>
-            <name locale="en_US">height</name>
-            <name locale="ru_RU">Высота</name>
-        </setting>
-        
-        <setting var="vk_mode" control_type="select">
-            <value>0</value>
-            <name locale="en_US">view</name>
-            <name locale="ru_RU">Вид</name>
-            <options>
-                <option value="0">
-                    <name locale="en_US">participants</name>
-                    <name locale="ru_RU">Участники</name>
-                </option>
-                <option value="1">
-                    <name locale="en_US">title only</name>
-                    <name locale="ru_RU">Только название</name>
-                </option>
-                <option value="2">
-                    <name locale="en_US">News</name>
-                    <name locale="ru_RU">Новости</name>
-                </option>
-            </options>
-        </setting>
-        <setting var="vk_color1" control_type="color">
-            <value>#FFFFFF</value>
-            <name locale="en_US">background Color</name>
-            <name locale="ru_RU">Цвет фона</name>
-        </setting>
-        <setting var="vk_color2" control_type="color">
-            <value>#2B587A</value>
-            <name locale="en_US">text Color</name>
-            <name locale="ru_RU">Цвет текста</name>
-        </setting>
-        <setting var="vk_color3" control_type="color">
-            <value>#5B7FA6</value>
-            <name locale="en_US">color buttons</name>
-            <name locale="ru_RU">Цвет кнопок</name>
-        </setting>
-        
-        
-        
-        <setting var="facebook_widget_title" control_type="text">
-            <value></value>
-            <name locale="en_US">
-                <![CDATA[
-                <hr /><br/><br/>
-                <p class="p-title">Facebook widget</p>	
-                ]]>
-            </name>
-            <name locale="ru_RU">
-                <![CDATA[
-                <hr /><br/><br/>
-                <p class="p-title">Виджет Facebook.</p>	
-                ]]>
-            </name>
+        <setting var="vk_widget_code" control_type="text">
+            <value><![CDATA[
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?121"></script>
+<!-- VK Widget -->
+<div id="vk_groups" style="margin: 0 auto;"></div>
+<script type="text/javascript">
+VK.Widgets.Group("vk_groups", {mode: 0, width: "251", height: "242", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 62260728);
+</script>
+]]></value>
+            <name locale="en_US">VK widget code</name>
+            <name locale="ru_RU">Виджет ВКонтакте код</name>
+            <description locale="en_US">Place the widget code in this field. The code can be found here <![CDATA[<a target="_blank" href="https://vk.com/dev/Community">VK widget</a>]]></description>
+            <description locale="ru_RU">Поместите код виджета в это поле. Код пожно получить по ссылке <![CDATA[<a target="_blank" href="https://vk.com/dev/Community">Виджет ВКонтакте</a>]]></description>
         </setting>
         
         <setting var="facebook_widget" control_type="checkbox">
@@ -601,59 +595,33 @@
             <name locale="en_US">Facebook widget</name>
             <name locale="ru_RU">Виджет Facebook</name>
         </setting>
-        <setting var="facebook_href" control_type="text">
-            <value>https://www.facebook.com/FacebookDevelopers</value>
-            <name locale="ru_RU">URL страницы/группы Facebook(абсолютный)</name>
-            <name locale="en_US">URL of the page/ Facebook  group (absolute)</name>
+        <setting var="facebook_widget_code" control_type="text">
+            <value><![CDATA[
+<div id="fb-root"></div>
+<div class="fb-like-box" 
+     data-href="https://www.facebook.com/FacebookDevelopers" 
+     data-colorscheme="light" 
+     data-width="250"
+     data-height="250"
+     data-show-faces="true" 
+     data-header="true" 
+     data-stream="false" 
+     data-show-border="true"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id))
+            return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>]]></value>
+            <name locale="en_US">facebook widget code</name>
+            <name locale="ru_RU">Виджет facebook код</name>
+            <description locale="en_US">Place the widget code in this field. The code can be found here <![CDATA[<a target="_blank" href="https://facebook.com/dev/Community">facebook widget</a>]]></description>
+            <description locale="ru_RU">Поместите код виджета в это поле. Код пожно получить по ссылке <![CDATA[<a target="_blank" href="https://facebook.com/dev/Community">Виджет facebook</a>]]></description>
         </setting>
-        
-        <setting var="facebook_width" control_type="text">
-            <value>250</value>
-            <name locale="ru_RU">Ширина блока в пикселах</name>
-            <name locale="en_US">Block width in pixels</name>
-        </setting>
-        <setting var="facebook_height" control_type="text">
-            <value></value>
-            <name locale="ru_RU">Высота блока в пикселах</name>
-            <name locale="en_US">Block height in pixels</name>
-        </setting>
-        <setting var="facebook_colorscheme" control_type="select">
-            <value>light</value>
-            <name locale="en_US">The color scheme</name>
-            <name locale="ru_RU">Цветовая схема</name>
-            <options>
-                <option value="light">
-                    <name locale="en_US">light</name>
-                    <name locale="ru_RU">light</name>
-                </option>
-                <option value="dark">
-                    <name locale="en_US">dark</name>
-                    <name locale="ru_RU">dark</name>
-                </option>
-            </options>
-        </setting>
-        <setting var="facebook_show_faces" control_type="checkbox">
-            <value>1</value>
-            <name locale="ru_RU">Показать список участников</name>
-            <name locale="en_US">Show the list of participants</name>
-        </setting>
-        <setting var="facebook_stream" control_type="checkbox">
-            <value></value>
-            <name locale="ru_RU">Показать новости группы</name>
-            <name locale="en_US">Show the news of the group</name>
-        </setting>
-        <setting var="facebook_header" control_type="checkbox">
-            <value>1</value>
-            <name locale="ru_RU">Показать надпись "Найдите нас на Facebook"</name>
-            <name locale="en_US">Show the inscription "Find us on Facebook"</name>
-        </setting>		
-        <setting var="facebook_show_border" control_type="checkbox">
-            <value>1</value>
-            <name locale="ru_RU">Объвести рамкой блок "группа Facebook"</name>
-            <name locale="en_US">Add a border to block "Facebook group"</name>
-        </setting>
-        
-
     </settings>
     <locales>
         <locale>
@@ -715,7 +683,7 @@
         <locale>
             <msgid>Site design</msgid>
             <msgstr locale="ru_RU">Дизайн сайта</msgstr>
-        </locale> 
+        </locale>
         <locale>
             <msgid>Designing and developing websites</msgid>
             <msgstr locale="ru_RU">Создание и разработка сайтов</msgstr>
@@ -752,8 +720,5 @@
             <msgid>Navigation</msgid>
             <msgstr locale="ru_RU">Навигация</msgstr>
         </locale>
-        
-        
-
     </locales>
 </theme>

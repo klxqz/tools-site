@@ -259,7 +259,7 @@ and (orientation:landscape) {
     }
     footer > div.container {display:none;}
     footer > div+div.container {display:block;}
-    footer {padding:0; margin-top:5px;}
+    footer {padding:0; margin-top:5px;padding-bottom: 55px;}
     #powered {margin-top:0; padding:15px 20px; border-top:1px solid #E6E6E6;}
     header #logo {margin:78px 0 29px 10px}
     .cart-position {

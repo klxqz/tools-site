@@ -1,0 +1,128 @@
+{if !strpos($wa->server('HTTP_USER_AGENT'), 'Google Page Speed')}
+    {strip}
+        {if $theme_settings.jquery_delayed_loading|default:'0' && !waRequest::isXMLHttpRequest()}
+            <script type="text/javascript">
+                window.delayJs.push("{$wa_theme_url}settings-panel/farbtastic/farbtastic.min.js");
+                window.delayJs.push("{$wa_theme_url}settings-panel/jquery.cookie.min.js");
+                window.delayJs.push("{$wa_theme_url}settings-panel/settings-panel.js");
+            </script>
+        {else}
+            <script src="{$wa_theme_url}settings-panel/farbtastic/farbtastic.min.js" type="text/javascript"></script>
+            <script src="{$wa_theme_url}settings-panel/jquery.cookie.min.js" type="text/javascript"></script>
+
+        {/if}
+
+        <div class="settings-panel">
+            <a class="settings-button" href="#"><i class="fa fa-cogs"></i></a>
+            <h3>Настройки</h3>
+            <div class="dialog_windows">
+                <form id="settings-theme-form" method="post">
+                    <h3>Оформление</h3>
+                    <div class="settings-block color_scheme">
+                        <span>Цветовая схема: <b></b></span>
+                        <input type="hidden" name="theme_settings[color_scheme]" value="{$theme_settings['color_scheme']}">
+                        <div>
+                            <a href="#" class="select-img {if $theme_settings.color_scheme==""}active{/if}" data-value="">Желтый</a>
+                            <a href="#" data-value="blue" class="select-img {if $theme_settings['color_scheme']=="blue"}active{/if}">Голубой</a>
+                            <a href="#" data-value="gray" class="select-img {if $theme_settings['color_scheme']=="gray"}active{/if}">Серый</a>
+                            <a href="#" data-value="green" class="select-img {if $theme_settings['color_scheme']=="green"}active{/if}">Зеленый</a>
+                            <a href="#" data-value="pink" class="select-img {if $theme_settings['color_scheme']=="pink"}active{/if}">Розовый</a>
+                            <a href="#" data-value="white" class="select-img {if $theme_settings['color_scheme']=="white"}active{/if}">Белый</a>
+                            <a href="#" data-value="red" class="select-img {if $theme_settings['color_scheme']=="red"}active{/if}">Красный</a>
+                            <a href="#" data-value="wgreen" class="select-img {if $theme_settings['color_scheme']=="wgreen"}active{/if}">Бело-Зеленый</a>
+                            <a href="#" data-value="worange" class="select-img {if $theme_settings['color_scheme']=="worange"}active{/if}">Бело-оранжевый</a>
+                            <a href="#" data-value="wblue" class="select-img {if $theme_settings['color_scheme']=="wblue"}active{/if}">Бело-голубой</a>
+                            <a href="#" data-value="wdblue" class="select-img {if $theme_settings['color_scheme']=="wdblue"}active{/if}">Бело-синий</a>
+                            <a href="#" data-value="users" class="select-img {if $theme_settings['color_scheme']=="users"}active{/if}">Пользовательская</a>
+                        </div>
+                    </div>
+                    <div class="theme-setting-field custom-color-scheme" {if $theme_settings['color_scheme']!="users"}style="display:none;"{/if}>
+                        <div class="theme-setting-name">Пользовательская цветовая схема:</div>
+                        <div class="theme-setting-value">
+                            <p>
+                                <span class="name_setting">Базовый цвет</span>
+                                <input class="color-settings" type="text" name="theme_settings[custom_base_color]" value="{$theme_settings.custom_base_color|escape}" />
+                            </p>
+                            <p>
+                                <span class="name_setting">Цвет верхней части Header</span>
+                                <input class="color-settings" type="text" name="theme_settings[custom_header_color]" value="{$theme_settings.custom_header_color|escape}" />
+                            </p>
+                            <p>
+                                <span class="name_setting">Цвет меню</span>
+                                <input class="color-settings" type="text" name="theme_settings[custom_menu_color]" value="{$theme_settings.custom_menu_color|escape}" />
+                            </p>
+                            <p>
+                                <span class="name_setting">Цвет ссылок в меню</span>
+                                <input class="color-settings" type="text" name="theme_settings[custom_menu_text_color]" value="{$theme_settings.custom_menu_text_color|escape}" />
+                            </p>
+                            <p>
+                                <span class="name_setting">Цвет ссылок подкатегорий в меню</span>
+                                <input class="color-settings" type="text" name="theme_settings[custom_menu_text_sub_color]" value="{$theme_settings.custom_menu_text_sub_color|escape}" />
+                            </p>
+                            <p>
+                                <span class="name_setting">Цвет текста у кнопок</span>
+                                <input class="color-settings" type="text" name="theme_settings[custom_text_buttom_noactive_color]" value="{$theme_settings.custom_text_buttom_noactive_color|escape}" />
+                            </p>
+                            <p>
+                                <span class="name_setting">Цвет текста у кнопок при наведении</span>
+                                <input class="color-settings" type="text" name="theme_settings[custom_text_buttom_color]" value="{$theme_settings.custom_text_buttom_color|escape}" />
+                            </p>
+                        </div>
+                    </div>
+                    <div class="settings-block bg_image">
+                        <span>Фон: <b></b></span>
+                        <input type="hidden" name="theme_settings[bg_image]" value="{$theme_settings['bg_image']}">
+                        <div>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/no_bg.png"}active{/if}" data-value="img/bg/no_bg.png">Без изображения</a>               
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/water.jpg"}active{/if}" data-value="img/bg/water.jpg">Вода</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/lava3.jpg"}active{/if}" data-value="img/bg/lava3.jpg">Лава3</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/lava2.jpg"}active{/if}" data-value="img/bg/lava2.jpg">Лава2</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/lava.jpg"}active{/if}" data-value="img/bg/lava.jpg">Лава</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/stars2.jpg"}active{/if}" data-value="img/bg/stars2.jpg">Звезды2</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/stars.jpg"}active{/if}" data-value="img/bg/stars.jpg">Звезды</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/gravel4.jpg"}active{/if}" data-value="img/bg/gravel4.jpg">Гравий4</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/gravel3.jpg"}active{/if}" data-value="img/bg/gravel3.jpg">Гравий3</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/gravel2.jpg"}active{/if}" data-value="img/bg/gravel2.jpg">Гравий2</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/gravel.jpg"}active{/if}" data-value="img/bg/gravel.jpg">Гравий</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/rose.jpg"}active{/if}" data-value="img/bg/rose.jpg">Роза</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/graffiti2.jpg"}active{/if}" data-value="img/bg/graffiti2.jpg">Граффити2</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/graffiti.jpg"}active{/if}" data-value="img/bg/graffiti.jpg">Граффити</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/protector.jpg"}active{/if}" data-value="img/bg/protector.jpg">Протектор</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/parket.jpg"}active{/if}" data-value="img/bg/parket.jpg">Паркет</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/wood.jpg"}active{/if}" data-value="img/bg/wood.jpg">Дерево</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/carbon2.jpg"}active{/if}" data-value="img/bg/carbon2.jpg">Карбон2</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/carbon.jpg"}active{/if}" data-value="img/bg/carbon.jpg">Карбон</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/bg-style2.jpg"}active{/if}" data-value="img/bg/bg-style2.gif">bg-style2</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/bg-style3.jpg"}active{/if}" data-value="img/bg/bg-style3.jpg">bg-style3</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/bg-style4.jpg"}active{/if}" data-value="img/bg/bg-style4.jpg">bg-style4</a>
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/bg-style5.jpg"}active{/if}" data-value="img/bg/bg-style5.jpg">bg-style5</a> 
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/cloth.jpg"}active{/if}" data-value="img/bg/cloth.jpg">Ткань</a> 
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/grey.jpg"}active{/if}" data-value="img/bg/grey.jpg">Серый</a> 
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/red.jpg"}active{/if}" data-value="img/bg/red.jpg">Красный</a> 
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/blue.jpg"}active{/if}" data-value="img/bg/blue.jpg">Голубой</a> 
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/green.jpg"}active{/if}" data-value="img/bg/green.jpg">Зеленый</a> 
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/purple.jpg"}active{/if}" data-value="img/bg/purple.jpg">Фиолетовый</a> 
+                            <a href="#" class="select-img {if $theme_settings['bg_image']=="img/bg/yellow.jpg"}active{/if}" data-value="img/bg/yellow.jpg">Желтый</a>
+                        </div>
+                    </div>
+
+                    <div class="theme-setting-field">
+                        <div class="theme-setting-name">Прочие настройки:</div>
+                        <div class="theme-setting-value">
+                            Полный список настроек темы дизайна доступен в админ. пенели
+                        </div>
+                    </div>
+                    <input type="submit" value="Применить" />
+                    <input type="submit" style="float: right;" name="reset" value="По умолчанию" /> 
+                    <script type="text/javascript" src="{$wa_theme_url}jquery.total-storage.min.js"></script>
+                    <script src="{$wa_theme_url}settings-panel/settings-panel.js" type="text/javascript"></script>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" property="stylesheet" href="{$wa_theme_url}settings-panel/farbtastic/farbtastic.min.css" type="text/css" />
+    <link rel="stylesheet" property="stylesheet" href="{$wa_theme_url}settings-panel/settings-panel.css" type="text/css" />
+{/strip}
+{/if}
